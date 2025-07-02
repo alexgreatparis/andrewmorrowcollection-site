@@ -1069,12 +1069,23 @@
             <div class="achat-section">
                 <!-- Édition Papier -->
                 <div class="achat-box" style="background: rgba(13, 63, 107, 0.3); border: 2px solid #d4af37; padding: 30px; margin: 20px; width: 300px;">
-                    <h3>BD Français - Anglais  2-Faces</h3>
+                    <h3>Édition Papier</h3>
                     <button class="cta-button order-btn">Commander tout de suite</button>
                     <p style="font-size: 2em; color: #d4af37;">14€</p>
+                    <p style="margin-bottom: 10px;">BD Français - Anglais "2-Faces"</p>
                     <p>Livraison rapide</p>
                     <p>Paiement sécurisé</p>
                     <p>via PayPal & Stripe</p>
+                </div>
+
+                <!-- Version Numérique -->
+                <div class="achat-box" style="background: rgba(5, 38, 68, 0.8); border: 2px solid #d4af37; padding: 30px; margin: 20px; width: 300px;">
+                    <h3>Version Numérique</h3>
+                    <button class="cta-button order-btn">Télécharger tout de suite</button>
+                    <p style="font-size: 2em; color: #d4af37;">3€</p>
+                    <p>Téléchargement immédiat</p>
+                    <p>Compatible tablette & smartphone</p>
+                    <p>Paiement sécurisé via Amazon</p>
                 </div>
             </div>
                 
@@ -1105,14 +1116,19 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
                 
                 <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37;">
-                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">BD Français - Anglais  2-Faces</h3>
+                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">Édition Papier</h3>
                     <p style="font-size: 2em; color: #d4af37; margin: 20px 0;">14€</p>
-                    
+                    <p style="margin-bottom: 10px;">BD Français - Anglais "2-Faces"</p>
                     <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
                     <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em;">Commander</button>
                 </div>
                 
-
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37;">
+                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">Version Numérique</h3>
+                    <p style="font-size: 2em; color: #d4af37; margin: 20px 0;">3€</p>
+                    <p style="margin-bottom: 20px;">Téléchargement immédiat</p>
+                    <button style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em;">Télécharger</button>
+                </div>
             </div>
         </div>
     </div>
@@ -1440,7 +1456,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
-                <h2>Commande - BD Andrew Morrow</h2>
+                <h2>Commande - Édition Papier</h2>
                 <input type="hidden" name="order_form" value="1">
                 
                 <div class="form-row">
@@ -1522,7 +1538,7 @@
                     <li><a href="#" data-tab="flipbook">Vol de la Palme d'Or</a></li>
                     <li><a href="#" data-tab="flipbook">Édition Collector</a></li>
                     <li><a href="#" data-tab="flipbook">Pages Coloriage</a></li>
-
+                    <li><a href="#" data-tab="flipbook">Version Numérique</a></li>
                 </ul>
             </div>
             <div class="footer-column">
