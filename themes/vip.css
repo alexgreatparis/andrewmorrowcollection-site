@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
 :root {
-    --blue-night: #0d3f6b;
-    --blue-night2: rgba(13, 63, 107, 0.3);
+    --blue-night: #001a33;
+    --blue-night2: rgba(0, 26, 51, 0.3);
     --gold: #c7b377;
     --gold-border: #bfa14a;
     --white: #f8f8f2;
@@ -239,8 +239,8 @@ body, p, h1, h2, h3, h4, h5, h6, li, ul, ol, input, textarea, select, button, la
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
 :root {
-    --blue-night: #0d3f6b;
-    --blue-night2: rgba(13, 63, 107, 0.3);
+    --blue-night: #001a33;
+    --blue-night2: rgba(0, 26, 51, 0.3);
     --gold: #c7b377;
     --gold-border: #bfa14a;
     --white: #f8f8f2;
