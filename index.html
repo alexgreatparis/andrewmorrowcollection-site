@@ -944,6 +944,7 @@
 
     </style>
     <script defer data-domain="andrewmorrowdetective.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Zone A - Navigation -->
@@ -1439,7 +1440,7 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
+            <form id="orderForm" class="order-form">  
                 <h2>Commande - BD Andrew Morrow</h2>
                 <input type="hidden" name="order_form" value="1">
                 
@@ -2167,7 +2168,83 @@
     }
     </script>
 
+    <script>
+    // === EmailJS & Commande JS ===
+    const EMAILJS_SERVICE_ID = 'service_uq0js8i';
+    const EMAILJS_TEMPLATE_ID = 'template_b1p59jm';
+    const EMAILJS_USER_ID = '2eSRSqpeNQWNd8i9T';
 
+    function generateOrderNumber() {
+        const date = new Date();
+        const ymd = date.getFullYear().toString() + (date.getMonth()+1).toString().padStart(2,'0') + date.getDate().toString().padStart(2,'0');
+        const uniq = Math.random().toString(36).substr(2, 6).toUpperCase();
+        return `AM${ymd}-${uniq}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('orderForm');
+        if (!form) return;
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            // Validation
+            const nom = form.nom.value.trim();
+            const prenom = form.prenom.value.trim();
+            const adresse = form.adresse.value.trim();
+            const code_postal = form.code_postal.value.trim();
+            const ville = form.ville.value.trim();
+            const email = form.email.value.trim();
+            const telephone = form.telephone.value.trim();
+            const quantite = parseInt(form.quantite.value, 10) || 1;
+            const errors = [];
+            if (!nom) errors.push('Le nom est obligatoire');
+            if (!prenom) errors.push('Le prénom est obligatoire');
+            if (!adresse) errors.push("L'adresse est obligatoire");
+            if (!code_postal) errors.push('Le code postal est obligatoire');
+            if (!ville) errors.push('La ville est obligatoire');
+            if (!email) errors.push("L'email est obligatoire");
+            if (!/^\S+@\S+\.\S+$/.test(email)) errors.push("L'email n'est pas valide");
+            if (quantite < 1 || quantite > 5) errors.push('La quantité doit être entre 1 et 5');
+            if (errors.length) {
+                showNotification(errors.join('\n'));
+                return;
+            }
+            // Calculs
+            const bd_price = 14.00;
+            const shipping_price = 2.50;
+            const total_bd = bd_price * quantite;
+            const total_commande = total_bd + shipping_price;
+            const order_number = generateOrderNumber();
+            // Préparation des variables pour EmailJS
+            const templateParams = {
+                nom, prenom, adresse, code_postal, ville, email, telephone: telephone || 'Non renseigné', quantite,
+                bd_price: bd_price.toFixed(2),
+                shipping_price: shipping_price.toFixed(2),
+                total_bd: total_bd.toFixed(2),
+                total_commande: total_commande.toFixed(2),
+                order_number,
+                date: new Date().toLocaleString('fr-FR')
+            };
+            // Désactive le bouton
+            const submitBtn = form.querySelector('.submit-btn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Envoi en cours...';
+            }
+            try {
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_USER_ID);
+                showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
+                form.reset();
+                document.querySelector('.modal .close').click();
+            } catch (err) {
+                showNotification("Erreur lors de l'envoi de votre commande. Veuillez réessayer.");
+            }
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Commander';
+            }
+        });
+    });
+    </script>
 
 </body>
 </html>
