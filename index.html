@@ -1493,6 +1493,11 @@
                     </div>
                 </div>
                 
+                <div class="form-group">
+                    <label for="commentaire">Commentaire</label>
+                    <textarea id="commentaire" name="commentaire" placeholder="Votre message ou demande particulière..." rows="3" style="width:100%;resize:vertical;"></textarea>
+                </div>
+                
                 <button type="submit" class="submit-btn">Commander</button>
                 <p style="font-size: 0.9em; color: #f5f5dc; margin-top: 15px; text-align: center;">
                     En cliquant sur Commander, vous acceptez nos <a href="#" data-tab="cgv" style="color: #d4af37;">Conditions Générales de Vente</a>
@@ -2195,6 +2200,7 @@
             const email = form.email.value.trim();
             const telephone = form.telephone.value.trim();
             const quantite = parseInt(form.quantite.value, 10) || 1;
+            const commentaire = form.commentaire.value.trim();
             const errors = [];
             if (!nom) errors.push('Le nom est obligatoire');
             if (!prenom) errors.push('Le prénom est obligatoire');
@@ -2217,6 +2223,7 @@
             // Préparation des variables pour EmailJS
             const templateParams = {
                 nom, prenom, adresse, code_postal, ville, email, telephone: telephone || 'Non renseigné', quantite,
+                commentaire,
                 bd_price: bd_price.toFixed(2),
                 shipping_price: shipping_price.toFixed(2),
                 total_bd: total_bd.toFixed(2),
