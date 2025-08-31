@@ -944,7 +944,6 @@
 
     </style>
     <script defer data-domain="andrewmorrowdetective.com" src="https://plausible.io/js/script.outbound-links.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Zone A - Navigation -->
@@ -1027,7 +1026,7 @@
                 <section id="zone-e">
                     <p>Une Palme d'Or volée.<br>
                     Une actrice déguisée.<br>
-                    Une scène effacée des caméras...</p>
+                    Une scène effacée des caméras.</p>
                 </section>
             </div>
         </div>
@@ -1041,7 +1040,7 @@
               <p style="font-size: 1.35em; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 40px;">Cette bande dessinée révolutionnaire propose un concept unique</p>
               <div style="display:flex; justify-content:center; margin-bottom:48px;">
                 <video style="max-width: 900px; width: 100%; border-radius: 18px; box-shadow: none; background: rgba(13, 63, 107, 0.3);" autoplay muted loop playsinline webkit-playsinline>
-                  <source src="mktg_recto-verso_26_720.mp4" type="video/mp4">
+                  <source src="mktg_recto-verso_25.mp4" type="video/mp4">
                   Votre navigateur ne prend pas en charge cette vidéo.
                 </video>
               </div>
@@ -1064,20 +1063,16 @@
                   </div>
                 </div>
               </div>
+              
+              <!-- Bouton J'achète -->
+              <div style="text-align: center; margin-top: 40px;">
+                <button onclick="switchTab('achat')" style="background: linear-gradient(135deg, #d4af37, #f0d858); color: #0d3f6b; border: none; padding: 20px 50px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 1.3em; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); transition: all 0.3s ease;">
+                  👍 YES! J'ACHÈTE...
+                </button>
+              </div>
             </div>
 
-            <!-- Ajout de la section Achat -->
-            <div class="achat-section">
-                <!-- Édition Papier -->
-                <div class="achat-box" style="background: rgba(13, 63, 107, 0.3); border: 2px solid #d4af37; padding: 30px; margin: 20px; width: 300px;">
-                    <h3>BD Français - Anglais  2-Faces</h3>
-                    <button class="cta-button order-btn">Commander tout de suite</button>
-                    <p style="font-size: 2em; color: #d4af37;">14€</p>
-                    <p>Livraison rapide</p>
-                    <p>Paiement sécurisé</p>
-                    <p>via PayPal & Stripe</p>
-                </div>
-            </div>
+
                 
         </div>
     </div>
@@ -1103,17 +1098,41 @@
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
                 
-                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37;">
-                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">BD Français - Anglais  2-Faces</h3>
-                    <p style="font-size: 2em; color: #d4af37; margin: 20px 0;">14€</p>
+                <!-- Carte Édition Papier avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_cannes.png" alt="Couverture BD 2-Faces" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
                     
-                    <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
-                    <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em;">Commander</button>
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">OÙ EST CACHÉE LA PALME D'OR ?</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
                 </div>
                 
-
+                <!-- Carte Édition Monaco avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_monaco.png" alt="Couverture BD 2-Faces Monaco" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
+                    
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1136,7 +1155,8 @@
                     <h4 style="color: #d4af37; margin-bottom: 15px;">Récompenses :</h4>
                     <ul style="list-style: none; font-size: 1.1em; line-height: 2;">
                         <li>🏆 Premier prix du jury - Concours "Écrire Cannes" 2024</li>
-                        <li>🏆 Premier prix du jury - Concours "Dis-moi dix mots" 2025 (BIOT)</li>
+                        <li>📚 Adaptation BD de "VolCan(nes) de solitude"</li>
+                        <li>🎭 Spécialiste des mystères de la Côte d'Azur</li>
                     </ul>
                 </div>
             </div>
@@ -1439,8 +1459,8 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form id="orderForm" class="order-form">  
-                <h2>Commande - BD Andrew Morrow</h2>
+            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
+                <h2>Commande - Édition Papier</h2>
                 <input type="hidden" name="order_form" value="1">
                 
                 <div class="form-row">
@@ -1483,18 +1503,13 @@
                     <div class="form-group">
                         <label for="quantite">Quantité</label>
                         <select id="quantite" name="quantite">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1">1 exemplaire</option>
+                            <option value="2">2 exemplaires</option>
+                            <option value="3">3 exemplaires</option>
+                            <option value="4">4 exemplaires</option>
+                            <option value="5">5 exemplaires</option>
                         </select>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="commentaire">Commentaire</label>
-                    <textarea id="commentaire" name="commentaire" placeholder="Votre message ou demande particulière..." rows="3" style="width:100%;resize:vertical;"></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">Commander</button>
@@ -1527,7 +1542,7 @@
                     <li><a href="#" data-tab="flipbook">Vol de la Palme d'Or</a></li>
                     <li><a href="#" data-tab="flipbook">Édition Collector</a></li>
                     <li><a href="#" data-tab="flipbook">Pages Coloriage</a></li>
-
+                    <li><a href="#" data-tab="flipbook">Version Numérique</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -2172,85 +2187,7 @@
     }
     </script>
 
-    <script>
-    // === EmailJS & Commande JS ===
-    const EMAILJS_SERVICE_ID = 'service_uq0js8i';
-    const EMAILJS_TEMPLATE_ID = 'template_b1p59jm';
-    const EMAILJS_USER_ID = '2eSRSqpeNQWNd8i9T';
 
-    function generateOrderNumber() {
-        const date = new Date();
-        const ymd = date.getFullYear().toString() + (date.getMonth()+1).toString().padStart(2,'0') + date.getDate().toString().padStart(2,'0');
-        const uniq = Math.random().toString(36).substr(2, 6).toUpperCase();
-        return `AM${ymd}-${uniq}`;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('orderForm');
-        if (!form) return;
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            // Validation
-            const nom = form.nom.value.trim();
-            const prenom = form.prenom.value.trim();
-            const adresse = form.adresse.value.trim();
-            const code_postal = form.code_postal.value.trim();
-            const ville = form.ville.value.trim();
-            const email = form.email.value.trim();
-            const telephone = form.telephone.value.trim();
-            const quantite = parseInt(form.quantite.value, 10) || 1;
-            const commentaire = form.commentaire.value.trim();
-            const errors = [];
-            if (!nom) errors.push('Le nom est obligatoire');
-            if (!prenom) errors.push('Le prénom est obligatoire');
-            if (!adresse) errors.push("L'adresse est obligatoire");
-            if (!code_postal) errors.push('Le code postal est obligatoire');
-            if (!ville) errors.push('La ville est obligatoire');
-            if (!email) errors.push("L'email est obligatoire");
-            if (!/^\S+@\S+\.\S+$/.test(email)) errors.push("L'email n'est pas valide");
-            if (quantite < 1 || quantite > 5) errors.push('La quantité doit être entre 1 et 5');
-            if (errors.length) {
-                showNotification(errors.join('\n'));
-                return;
-            }
-            // Calculs
-            const bd_price = 14.00;
-            const shipping_price = 2.50;
-            const total_bd = bd_price * quantite;
-            const total_commande = total_bd + shipping_price;
-            const order_number = generateOrderNumber();
-            // Préparation des variables pour EmailJS
-            const templateParams = {
-                nom, prenom, adresse, code_postal, ville, email, telephone: telephone || 'Non renseigné', quantite,
-                commentaire,
-                bd_price: bd_price.toFixed(2),
-                shipping_price: shipping_price.toFixed(2),
-                total_bd: total_bd.toFixed(2),
-                total_commande: total_commande.toFixed(2),
-                order_number,
-                date: new Date().toLocaleString('fr-FR')
-            };
-            // Désactive le bouton
-            const submitBtn = form.querySelector('.submit-btn');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Envoi en cours...';
-            }
-            try {
-                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_USER_ID);
-                showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
-                form.reset();
-                document.querySelector('.modal .close').click();
-            } catch (err) {
-                showNotification("Erreur lors de l'envoi de votre commande. Veuillez réessayer.");
-            }
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Commander';
-            }
-        });
-    });
-    </script>
 
 </body>
 </html>
