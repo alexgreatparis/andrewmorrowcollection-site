@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Andrew Morrow Detective - BD Mystère Côte d'Azur | Vol de la Palme d'Or</title>
+    <meta name="description" content="Découvrez Andrew Morrow, détective sur la Côte d'Azur. BD policière + coloriage 2-Faces. Enquêtes à Cannes, mystères et élégance française. Prix littéraire 2024.">
+    <meta name="keywords" content="Andrew Morrow, détective, BD policière, Côte d'Azur, Cannes, 2-Faces, coloriage, mystère français, bande dessinée, prix littéraire">
+    <meta name="author" content="Nat Bissey">
+    <link rel="canonical" href="https://andrewmorrowdetective.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Andrew Morrow Detective - Mystères de la Côte d'Azur">
+    <meta property="og:description" content="Plongez dans l'univers du détective Andrew Morrow et ses enquêtes sur la Côte d'Azur">
+    <meta property="og:image" content="images/1M1.png">
+    <meta property="og:url" content="https://andrewmorrowdetective.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Cache Busting -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Styles de transition pour les thèmes -->
+    <!-- SUPPRIMER tout ce qui concerne les transitions de thème -->
+    <link rel="stylesheet" href="themes/vip.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap?v=2.8.001" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #0d3f6b url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGklEQVQYV2NkYGBgYBwVQBUwDgugCgadAAYGAAAaAALmrnr3AAAAAElFTkSuQmCC') repeat;
+        color: #f5f5dc;
+        font-family: 'Playfair Display', serif;
+        overflow-x: hidden;
+    }
+
+    /* Zone A - Navigation Ultra-Chic */
+    #zone-a {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .nav-button {
+        background: transparent;
+        border: 2px solid #d4af37;
+        color: #d4af37;
+        font-family: 'Cinzel', serif;
+        font-size: 16px;
+        padding: 20px 15px;
+        border-radius: 8px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 2px 8px rgba(212, 175, 55, 0.2),
+            inset 0 1px 0 rgba(212, 175, 55, 0.1);
+        transform: perspective(1000px) rotateX(0deg);
+        backdrop-filter: blur(2px);
+    }
+
+    .nav-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, 
+            rgba(212, 175, 55, 0.1) 0%,
+            rgba(240, 216, 88, 0.2) 50%,
+            rgba(255, 235, 120, 0.3) 100%);
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+    }
+
+    .nav-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .nav-button:hover::before, .nav-button.active::before {
+        left: 0;
+    }
+
+    .nav-button:hover::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav-button:hover, .nav-button.active {
+        background: linear-gradient(135deg, #d4af37 0%, #f0d858 50%, #d4af37 100%);
+        color: #0d3f6b;
+        box-shadow: 
+            0 0 20px rgba(212, 175, 55, 0.7),
+            0 8px 25px rgba(0,0,0,0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px) scale(1.05) perspective(1000px) rotateX(5deg);
+        border-color: #f0d858;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .nav-button:active {
+        transform: translateY(-1px) scale(1.02);
+        transition: all 0.1s ease;
+    }
+
+    /* Main Content Container */
+    .main-container {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        min-height: calc(100vh - 140px);
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    /* Left Column */
+    .left-column {
+        display: grid;
+        grid-template-rows: auto 2fr;
+        gap: 20px;
+    }
+
+    #zone-b1 {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    #zone-b1 h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2em;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    .mystery-description {
+        margin-top: 15px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #f5f5dc;
+        font-style: italic;
+    }
+
+    #zone-c1 {
+        height: 600px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+    }
+
+    /* Right Column */
+    .right-column {
+        display: grid;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 20px;
+    }
+
+    #zone-b2 {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+    }
+
+    #zone-b2 h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2em;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    .andrew-name {
+        font-family: 'Creepster', cursive !important;
+    }
+
+    #zone-c2 {
+        position: relative;
+        height: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+    }
+
+    #zone-b3 {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+    }
+
+    #zone-b3 h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2em;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    #zone-c3 {
+        position: relative;
+        height: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+    }
+
+    #zone-d {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+    }
+
+    #zone-d h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2em;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    #zone-e {
+        padding: 30px;
+        text-align: center;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+    }
+
+    #zone-e p {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #f5f5dc;
+        font-style: italic;
+    }
+
+    /* Media blocks */
+    .media-block {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .media-block:hover {
+        transform: translateY(-4px);
+    }
+
+    .carousel-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 600ms ease-in-out;
+    }
+
+    .carousel-item.active {
+        opacity: 1;
+    }
+
+    .carousel-item img, .carousel-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-height: 100%;
+    }
+
+    .comment-zone {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: rgba(13, 63, 107, 0.8);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .comment-zone p {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: #f5f5dc;
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+
+    /* Order Form Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background: linear-gradient(135deg, #0d3f6b, #1a4f7a);
+        margin: 5% auto;
+        padding: 40px;
+        border: 2px solid #d4af37;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        position: relative;
+    }
+
+    .close {
+        color: #d4af37;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .close:hover {
+        color: #f0d858;
+    }
+
+    .order-form h2 {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        color: #d4af37;
+        margin-bottom: 8px;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #d4af37;
+        border-radius: 8px;
+        background: rgba(245, 245, 220, 0.1);
+        color: #f5f5dc;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+        outline: none;
+        border-color: #f0d858;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        background: rgba(245, 245, 220, 0.15);
+    }
+
+    .form-group input.error {
+        border-color: #ff6b6b !important;
+    }
+
+    .form-group input::placeholder {
+        color: rgba(245, 245, 220, 0.6);
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .submit-btn {
+        background: linear-gradient(135deg, #d4af37, #f0d858);
+        color: #0d3f6b;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+        background: linear-gradient(135deg, #f0d858, #d4af37);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    /* Success Notification */
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #d4af37, #f0d858);
+        color: #0d3f6b;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        z-index: 1001;
+        transform: translateX(400px);
+        transition: transform 0.5s ease;
+        max-width: 400px;
+    }
+
+    .notification.show {
+        transform: translateX(0);
+    }
+
+    /* Suite du CSS à restaurer dans la prochaine tranche... */
+
+    /* Responsive design */
+    @media (max-width: 992px) {
+        .achat-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .achat-box {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .cta-button {
+            padding: 12px 24px;
+            font-size: 1em;
+        }
+
+        .achat-box h3 {
+            font-size: 1.5em;
+        }
+
+        .achat-box p {
+            font-size: 1em;
+        }
+    }
+
+    .temoignages-section, .testimonial-quote, .temoignages-list, .temoignages-block, .temoignages {
+        font-family: 'Cinzel', serif !important;
+        color: #f8f8f2;
+        font-size: 1.15em;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+    .temoignages-section strong, .testimonial-quote strong, .temoignages-list strong, .temoignages-block strong, .temoignages strong {
+        color: #d4af37;
+        font-weight: 600;
+    }
+    .temoignages-section em, .testimonial-quote em, .temoignages-list em, .temoignages-block em, .temoignages em {
+        color: #f8f8f2;
+        font-style: italic;
+    }
+    .temoignages-section a, .testimonial-quote a, .temoignages-list a, .temoignages-block a, .temoignages a {
+        color: #d4af37;
+        text-decoration: none;
+    }
+    .temoignages-section a:hover, .testimonial-quote a:hover, .temoignages-list a:hover, .temoignages-block a:hover, .temoignages a:hover {
+        text-decoration: underline;
+    }
+    .temoignages-section {
+        margin: 0 auto 32px auto;
+        max-width: 900px;
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 14px;
+        padding: 32px 24px;
+        box-shadow: 0 4px 24px rgba(13,63,107,0.10);
+    }
+    .temoignages-list {
+        margin-top: 18px;
+    }
+    .temoignages-list p {
+        background: rgba(13, 63, 107, 0.18);
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(13,63,107,0.08);
+        padding: 18px 24px 12px 24px;
+        margin: 0 auto 22px auto;
+        max-width: 700px;
+        font-family: 'Cinzel', serif !important;
+        color: #f8f8f2;
+        font-size: 1.13em;
+        font-style: italic;
+        position: relative;
+    }
+    .temoignages-list p strong {
+        display: block;
+        color: #d4af37;
+        font-weight: 700;
+        font-style: normal;
+        margin-bottom: 6px;
+        font-size: 1.08em;
+    }
+
+    /* Testimonials Section for Achat */
+    .achat-testimonials {
+        background: rgba(13, 63, 107, 0.4);
+        padding: 30px 20px;
+        margin: 30px 0;
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .achat-testimonials h3 {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .achat-testimonial-carousel {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+        background: rgba(26, 26, 26, 0.3);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .achat-testimonial-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 600ms ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .achat-testimonial-item.active {
+        opacity: 1;
+    }
+
+    .achat-testimonial-quote {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #f5f5dc;
+        margin-bottom: 15px;
+        max-width: 700px;
+    }
+
+    .achat-testimonial-quote::before {
+        content: '« ';
+        color: #d4af37;
+    }
+
+    .achat-testimonial-quote::after {
+        content: ' »';
+        color: #d4af37;
+    }
+
+    .achat-testimonial-author {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+
+    .achat-testimonial-author .profession {
+        font-style: italic;
+        color: #f5f5dc;
+        opacity: 0.8;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+        background: rgba(13, 63, 107, 0.4);
+        padding: 30px 20px;
+        margin: 30px 0;
+        border-radius: 12px;
+    }
+
+    .testimonials-section h3 {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .testimonial-carousel {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+        background: rgba(26, 26, 26, 0.3);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .testimonial-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 600ms ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .testimonial-item.active {
+        opacity: 1;
+    }
+
+    .testimonial-quote {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #f5f5dc;
+        margin-bottom: 15px;
+        max-width: 700px;
+    }
+
+    .testimonial-quote::before {
+        content: '« ';
+        color: #d4af37;
+    }
+
+    .testimonial-quote::after {
+        content: ' »';
+        color: #d4af37;
+    }
+
+    .testimonial-author {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+
+    .testimonial-author .profession {
+        font-style: italic;
+        color: #f5f5dc;
+        opacity: 0.8;
+    }
+
+    .testimonial-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.3);
+        transition: background 0.3s ease;
+    }
+
+    .indicator.active {
+        background: #d4af37;
+    }
+
+    /* CORRECTION COULEUR LIENS FOOTER */
+    .footer-column a:link {
+        color: #f5f5dc !important;
+        text-decoration: none;
+    }
+    .footer-column a:visited {
+        color: #f5f5dc !important;
+        text-decoration: none;
+    }
+    .footer-column a:hover {
+        color: #d4af37 !important;
+        text-decoration: none;
+    }
+    .footer-column a:active {
+        color: #d4af37 !important;
+        text-decoration: none;
+    }
+    .footer-column ul li a {
+        color: #f5f5dc !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+    .footer-column ul li a:hover {
+        color: #d4af37 !important;
+    }
+
+    /* NAVIGATION PREMIUM */
+    .navigation, .navigation ul, .navigation li, .navigation a {
+        font-family: 'Cinzel', serif !important;
+        color: #d4af37 !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-decoration: none !important;
+        font-size: 1.25em;
+        letter-spacing: 1px;
+    }
+
+    .navigation a:link,
+    .navigation a:visited {
+        color: #d4af37 !important;
+        text-decoration: none !important;
+    }
+
+    .navigation a:hover,
+    .navigation a:active {
+        color: #f0d858 !important;
+        text-decoration: underline !important;
+    }
+
+    .navigation h3, .navigation h2, .navigation h1 {
+        color: #fffbe6 !important;
+        font-family: 'Cinzel', serif !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    #zone-f {
+        width: 100%;
+        padding: 40px 20px;
+        background: rgba(13, 63, 107, 0.6);
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-column h3 {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+        color: #d4af37 !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .footer-column ul li a:hover {
+        color: #f0d858 !important;
+    }
+
+    /* Tab content sections */
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* FAQ Styles - À AJOUTER dans le CSS */
+    .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .faq-category {
+        background: rgba(13, 63, 107, 0.3);
+        border-radius: 12px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+
+    .faq-category-title {
+        background: rgba(212, 175, 55, 0.2);
+        padding: 20px 30px;
+        font-family: 'Cinzel', serif;
+        font-size: 1.4em;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        padding: 25px 30px;
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-question {
+        font-family: 'Cinzel', serif;
+        color: #d4af37;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .faq-answer {
+        font-family: 'Playfair Display', serif;
+        color: #f5f5dc;
+        line-height: 1.8;
+        font-size: 1.05em;
+    }
+
+    .faq-answer a {
+        color: #d4af37;
+        text-decoration: none;
+    }
+
+    .faq-answer a:hover {
+        color: #f0d858;
+    }
+
+    /* Achat section styles - À AJOUTER */
+    .achat-section {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .achat-box {
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #f0d858, #d4af37);
+        color: #0d3f6b;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        transform: translateY(-2px);
+    }
+
+    </style>
+    <script defer data-domain="andrewmorrowdetective.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+</head>
+<body>
+    <!-- Zone A - Navigation -->
+    <section id="zone-a">
+        <nav class="navigation">
+            <button class="nav-button active" data-tab="mysteres">Mystères</button>
+            <button class="nav-button" data-tab="flipbook">2-Faces</button>
+            <button class="nav-button" data-tab="achat">Achat</button>
+            <button class="nav-button" data-tab="auteur">Auteur</button>
+            <button class="nav-button" data-tab="faq">FAQ</button>
+            <button class="nav-button" data-tab="contact">Contact</button>
+        </nav>
+    </section>
+
+    <!-- Tab Content: Mystères (default active) -->
+    <div id="mysteres-content" class="tab-content active">
+        <div class="main-container">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Zone B1 -->
+                <section id="zone-b1">
+                    <h2>Les Mystères de la Côte d'Azur</h2>
+                    <div class="mystery-description">
+                        Découvrez la face cachée de la Riviera française, où secrets de famille et intrigues mondaines se mêlent aux paysages enchanteurs de Cannes, Nice et Saint-Tropez.
+                    </div>
+                </section>
+                
+                <!-- Zone C1 -->
+                <section id="zone-c1">
+                    <div class="media-block">
+                        <div class="carousel-container" id="carousel-c1">
+                            <!-- Carousel items will be dynamically added -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Zone B2 -->
+                <section id="zone-b2">
+                    <h2>Les Mystères d'<span class="andrew-name">Andrew Morrow</span></h2>
+                    <div class="mystery-description">
+                        Andrew Morrow est un détective malicieux qui enquête sur la Côte d'Azur, la "French Riviera". Chaque BD est inspirée de lieux réels de la côte d'Azur et mêle polar, mystère et clins d'œil cinématographiques.
+                    </div>
+                </section>
+                
+                <!-- Zone C2 -->
+                <section id="zone-c2">
+                    <div class="media-block">
+                        <div class="carousel-container" id="carousel-c2">
+                            <!-- Carousel items will be dynamically added -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Zone B3 -->
+                <section id="zone-b3">
+                    <h2>Les Mystères du Tapis Rouge</h2>
+                    <div class="mystery-description">
+                        Dans l'univers glamour du Festival de Cannes, où les apparences brillent autant qu'elles dissimulent des vérités troublantes.
+                    </div>
+                </section>
+                
+                <!-- Zone C3 -->
+                <section id="zone-c3">
+                    <div class="media-block">
+                        <div class="carousel-container" id="carousel-c3">
+                            <!-- Carousel items will be dynamically added -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Zone D -->
+                <section id="zone-d">
+                    <h2>Le Vol de la Palme d'Or</h2>
+                </section>
+                
+                <!-- Zone E -->
+                <section id="zone-e">
+                    <p>Une Palme d'Or volée.<br>
+                    Une actrice déguisée.<br>
+                    Une scène effacée des caméras.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: 2-Faces -->
+    <div id="flipbook" class="tab-content" data-tab-name="flipbook">
+        <div style="padding: 50px 20px;">
+            <div class="flipbook-text" style="width:100%; max-width:1200px; margin:0 auto; text-align:center; background: rgba(13, 63, 107, 0.3); border-radius: 18px; padding: 40px 36px 32px 36px;">
+              <h3 style="color: #d4af37; margin-bottom: 20px; font-size: 2.2em; font-family: 'Cinzel', serif; letter-spacing: 1px;">2-Faces</h3>
+              <p style="font-size: 1.35em; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 40px;">Cette bande dessinée révolutionnaire propose un concept unique</p>
+              <div style="display:flex; justify-content:center; margin-bottom:48px;">
+                <video style="max-width: 900px; width: 100%; border-radius: 18px; box-shadow: none; background: rgba(13, 63, 107, 0.3);" autoplay muted loop playsinline webkit-playsinline>
+                  <source src="mktg_recto-verso_25.mp4" type="video/mp4">
+                  Votre navigateur ne prend pas en charge cette vidéo.
+                </video>
+              </div>
+              <div style="background: rgba(13, 63, 107, 0.3); border-radius: 18px; padding: 40px 36px 32px 36px; margin-bottom: 38px; box-shadow: 0 4px 24px rgba(13,63,107,0.10); max-width: 900px; margin-left: auto; margin-right: auto; text-align:left;">
+                <p style="font-size: 1.18em; line-height: 2.1; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 18px;">
+                  D'un côté, une enquête policière racontée en images avec du texte en <span style='color:#d4af37; font-weight:bold;'>français</span>&nbsp;; de l'autre, la même histoire, mais en <span style='color:#d4af37; font-weight:bold;'>anglais</span>.<br><br>
+                  <span style='color:#d4af37; font-weight:bold;'>Ce qui rend cette BD vraiment spéciale</span>, c'est que même si le récit est identique, le fait de lire dans une autre langue transforme la perception de l'histoire. Une expérience à la fois <b>linguistique</b>, <b>visuelle</b> et <b>narrative</b>.<br><br>
+                  Vous parlez français&nbsp;? Vous parlez anglais&nbsp;? <span style='color:#d4af37; font-style:italic;'>Cette BD vous laissera sans voix... ou vous donnera envie de parler&nbsp;!</span><br><br>
+                  <span style='color:#d4af37;'>🔹 BD policière – version française au recto<br>🔹 BD policière – version anglaise au verso</span>
+                </p>
+                <p style="font-size: 1.12em; color: #f5f5dc; margin-bottom: 0; text-align: center; font-style: italic;">Parfait pour tout le monde à la plage cet été&nbsp;!</p>
+                <div style="margin-top: 36px;">
+                  <div style="font-size: 1.18em; line-height: 2.1; color: #f5f5dc; font-family: 'Playfair Display', serif; text-align: left; max-width: 520px; margin: 0 auto;">
+                    <div style="margin-bottom: 18px;">✨ <b>Intrigue policière et culturelle</b></div>
+                    <div style="margin-bottom: 18px;">📚 <b>Facile à lire</b></div>
+                    <div style="margin-bottom: 18px;">🎨 <b>Formule Transat</b></div>
+                    <div style="margin-bottom: 18px;">🎨 <b>Humour international</b></div>
+                    <div style="margin-bottom: 18px;">📚 <b>Qualité luxe premium</b></div>
+                    <div style="margin-bottom: 18px;">🎁 <b>Le cadeau pour soi (ou pour les autres)</b></div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Bouton J'achète -->
+              <div style="text-align: center; margin-top: 40px;">
+                <button onclick="switchTab('achat')" style="background: linear-gradient(135deg, #d4af37, #f0d858); color: #0d3f6b; border: none; padding: 20px 50px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 1.3em; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); transition: all 0.3s ease;">
+                  👍 YES! J'ACHÈTE...
+                </button>
+              </div>
+            </div>
+
+
+                
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Tab Content: Achat -->
+    <div id="achat-content" class="tab-content">
+        <div style="padding: 60px 20px; text-align: center; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px;">ACHAT</h2>
+            
+            <!-- Testimonials Section for Achat -->
+            <div class="achat-testimonials">
+                <h3>Ce qu'en pensent nos lecteurs</h3>
+                <div class="achat-testimonial-carousel" id="achat-testimonial-carousel">
+                    <!-- Testimonial items will be dynamically added -->
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Carte Édition Papier avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_cannes.png" alt="Couverture BD 2-Faces" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
+                    
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">OÙ EST CACHÉE LA PALME D'OR ?</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
+                </div>
+                
+                <!-- Carte Édition Monaco avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_monaco.png" alt="Couverture BD 2-Faces Monaco" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
+                    
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: Auteur -->
+    <div id="auteur-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">L'AUTEUR</h2>
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(13, 63, 107, 0.3); padding: 40px; border-radius: 12px;">
+                <h3 style="color: #d4af37; margin-bottom: 20px; font-size: 1.8em;">Nat Bissey</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Auteure passionnée de mystères et d'intrigues, Nat est tombée sous le charme de Cannes 
+                    au point d'en faire le théâtre de ses enquêtes les plus captivantes.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Sa nouvelle "VolCan(nes) de solitude" a reçu le premier prix du jury du concours "Écrire Cannes", 
+                    avant de connaître une seconde vie sous forme de bande dessinée.
+                </p>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #d4af37;">
+                    <h4 style="color: #d4af37; margin-bottom: 15px;">Récompenses :</h4>
+                    <ul style="list-style: none; font-size: 1.1em; line-height: 2;">
+                        <li>🏆 Premier prix du jury - Concours "Écrire Cannes" 2024</li>
+                        <li>📚 Adaptation BD de "VolCan(nes) de solitude"</li>
+                        <li>🎭 Spécialiste des mystères de la Côte d'Azur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <div class="testimonials-section">
+                <h3>Témoignages</h3>
+                <div class="testimonial-carousel" id="testimonial-carousel">
+                    <!-- Testimonial items will be dynamically added -->
+                </div>
+                <div class="testimonial-indicators" id="testimonial-indicators">
+                    <!-- Indicators will be dynamically added -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: FAQ -->
+    <div id="faq-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">FAQ</h2>
+            
+            <div class="faq-container">
+                <!-- Questions Générales -->
+                <div class="faq-category">
+                    <div class="faq-category-title">Questions Générales</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🟢 Qui est Andrew Morrow ?</div>
+                        <div class="faq-answer">Andrew Morrow est un détective malicieux qui enquête sur la Côte d'Azur, la "French Riviera". Chaque BD est inspirée de lieux réels de la côte d'Azur et mêle polar, mystère et clins d'œil cinématographiques.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🟢 Quelle est l'histoire de "Le Vol de la Palme d'Or" ?</div>
+                        <div class="faq-answer">L'intrigue se déroule pendant le Festival de Cannes. Une Palme d'Or a disparu… et Andrew est chargé de percer le mystère. L'enquête mêle fausses pistes, manipulations et décors emblématiques.</div>
+                    </div>
+                </div>
+
+                <!-- Format & Contenu -->
+                <div class="faq-category">
+                    <div class="faq-category-title">Format & Contenu</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🟡 C'est quoi un 2-Faces BD ?</div>
+                        <div class="faq-answer">Un format unique : d'un côté une bande dessinée en français et "on la retourne"... et hop, on passe en anglais. Cool..!</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🟡 Qui peut être interessé par ce concept ?</div>
+                        <div class="faq-answer">Ceux qui veulent une BD bilingue. L'anglais, le français, - en même temps - c'est pas tendance ? et puis, on se fait un cours de français ou d'anglais facile, pour les plus petits comme pour les séniors.</div>
+                    </div>
+                </div>
+
+                <!-- Commande & Livraison -->
+                <div class="faq-category">
+                    <div class="faq-category-title">Commande & Livraison</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Quels sont les modes de paiement ?</div>
+                        <div class="faq-answer">Un lien Paypal vous est transmis, Carte bancaire (Stripe) à venir. Paiement 100% sécurisé.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Combien de temps faut-il pour recevoir la BD ?</div>
+                        <div class="faq-answer">📦 2 à 5 jours ouvrés en France Métropolitaine.<br>🌍 Livraison internationale possible (délais selon pays).</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Y a-t-il des frais de port ?</div>
+                        <div class="faq-answer">2,50€ pour la France.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Puis-je offrir la BD en cadeau ?</div>
+                        <div class="faq-answer">Oui. Vous nous envoyez un mail décrivant vos souhaits. On fera avec plaisir un mot personnalisé et un emballage à votre choix.</div>
+                    </div>
+                </div>
+
+                <!-- Garanties -->
+                <div class="faq-category">
+                    <div class="faq-category-title">Garanties</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔴 Puis-je me faire rembourser si je ne suis pas satisfait ?</div>
+                        <div class="faq-answer">
+                        Oui. Vous avez 14 jours après réception pour changer d'avis.
+                        Écrivez-nous à <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a>
+                        avec une photo du produit qui pose problème.
+                        </div>
+
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">🔴 Que faire en cas de problème avec ma commande ?</div>
+                        <div class="faq-answer">
+                        Nous sommes là ! Envoyez un mail à <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a>
+                        avec votre numéro de commande. Réponse sous 24h.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communauté -->
+                <div class="faq-category">
+                    <div class="faq-category-title">Bonus</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">📣 Puis-je participer à la communauté Andrew Morrow ?</div>
+                        <div class="faq-answer">Oui ! Postez vos coloriages ou scènes préférées sur Instagram avec le hashtag <strong>#AndrewMorrowBD</strong>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: Contact -->
+    <div id="contact-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">CONTACT</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: rgba(13, 63, 107, 0.3); padding: 40px; border-radius: 12px; text-align: center;">
+                <h3 style="color: #d4af37; margin-bottom: 20px; font-size: 1.8em;">NATEY Éditions</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 30px;">
+                    Pour toute question sur Andrew Morrow Detective ou nos publications.
+                </p>
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 1.1em; margin-bottom: 10px;">
+                        <strong style="color: #d4af37;">Email :</strong> <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a>
+                    </p>
+                    <p style="font-size: 1.1em; margin-bottom: 10px;">
+                        <strong style="color: #d4af37;">Instagram :</strong> @andrewmorrowbd
+                    </p>
+                </div>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #d4af37;">
+                    <p style="font-style: italic; font-size: 1.1em;">
+                        "Nous répondons à toutes les énigmes... même celles de nos lecteurs."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: Mentions Légales -->
+    <div id="mentions-legales-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">MENTIONS LÉGALES</h2>
+            <div class="legal-content">
+                <p>Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, les informations suivantes permettent d'identifier l'éditeur du site https://andrewmorrowdetective.com.</p>
+                
+                <h3>Éditeur du site</h3>
+                <p><strong>Nom ou dénomination sociale :</strong> NATEY Editions</p>
+                <p><strong>Forme juridique :</strong> Entrepreneur individuel (EI)</p>
+                <p><strong>Adresse du siège social :</strong> 21 Route du Village 06400 CANNES</p>
+                <p><strong>Adresse e-mail :</strong> <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a></p>
+                <p><strong>Numéro SIREN :</strong> 944 520 386</p>
+                <p><strong>Numéro de TVA intracommunautaire :</strong> FR80944520386</p>
+                <p><strong>Directeur de la publication :</strong> Nat BISSEY</p>
+                
+                <h3>Hébergeur du site</h3>
+                <p><strong>Nom de l'hébergeur :</strong> IONOS</p>
+                <p><strong>Adresse :</strong> 7, place de la Gare, BP 70109, 57200 Sarreguemines Cedex</p>
+                <p><strong>Numéro de téléphone :</strong> 0970 808 911</p>
+                
+                <h3>Propriété intellectuelle</h3>
+                <p>Le contenu du site https://andrewmorrowdetective.com (textes, images, bandes dessinées, logos, etc.) est protégé par le droit d'auteur conformément au Code de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, en tout ou partie, sans autorisation préalable de l'éditeur est strictement interdite et constitue une contrefaçon.</p>
+                <p>Toute utilisation sans autorisation préalable peut entraîner des poursuites civiles et/ou pénales.</p>
+                
+                <h3>Données personnelles</h3>
+                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), les données personnelles collectées sur ce site (nom, prénom, adresse e-mail, adresse postale, etc.) sont traitées dans le respect de la confidentialité. Elles sont utilisées pour le traitement des commandes, la gestion des comptes clients, les éventuels échanges de correspondance numérique. Le traitement des données repose sur le consentement de l'utilisateur ou sur l'exécution du contrat de vente.</p>
+                <p><strong>Responsable du traitement :</strong> Nat BISSEY</p>
+                <p><strong>Contact :</strong> <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a></p>
+                <p>Vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition au traitement de vos données. Pour exercer ces droits, contactez-nous à l'adresse ci-dessus.</p>
+                
+                <h3>Cookies</h3>
+                <p>Ce site peut utiliser des cookies pour améliorer l'expérience utilisateur et analyser le trafic. Vous pouvez accepter ou refuser les cookies via le bandeau prévu à cet effet lors de votre première visite. La durée de validité du consentement est de 13 mois maximum.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: CGV -->
+    <div id="cgv-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">CONDITIONS GÉNÉRALES DE VENTE</h2>
+            <div class="legal-content">
+                <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre NATEY Editions, ci-après dénommé « le Vendeur », et toute personne physique ou morale effectuant un achat sur le site https://andrewmorrowdetective.com, ci-après dénommé « le Client ». Elles sont applicables à toute commande passée sur le site.</p>
+                
+                <h3>Article 1 : Objet</h3>
+                <p>Les présentes CGV définissent les conditions dans lesquelles le Vendeur propose et vend ses produits, à savoir des bandes dessinées (physiques ou numériques), des abonnements ou des services associés, aux Clients.</p>
+                
+                <h3>Article 2 : Produits</h3>
+                <p>Les produits proposés à la vente sont des bandes dessinées, disponibles en format physique (livres imprimés) ou numérique (fichiers téléchargeables). Les caractéristiques essentielles des produits (titre, auteur, format, prix TTC, etc.) sont indiquées sur les fiches produits du site. Les visuels des produits ne sont pas contractuels.</p>
+                
+                <h3>Article 3 : Prix</h3>
+                <p>Les prix des produits sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison. Les frais de livraison sont précisés avant la validation de la commande. Le Vendeur se réserve le droit de modifier ses prix à tout moment, mais les produits seront facturés sur la base des tarifs en vigueur au moment de la validation de la commande.</p>
+                
+                <h3>Article 4 : Commande</h3>
+                <p>Le Client passe commande via le site en sélectionnant les produits, en vérifiant son panier et en fournissant les informations nécessaires (adresse de livraison, informations de paiement). La commande est confirmée par un e-mail récapitulatif envoyé au Client. Toute commande vaut acceptation des présentes CGV.</p>
+                
+                <h3>Article 5 : Paiement</h3>
+                <p>Le paiement s'effectue par PayPal. Les transactions sont sécurisées par Paypal. Le paiement est exigible à la commande. En cas de retard de paiement, des pénalités pourront être appliquées conformément à la législation en vigueur.</p>
+                
+                <h3>Article 6 : Livraison</h3>
+                <p>Les produits physiques sont livrés à l'adresse indiquée par le Client lors de la commande. Les délais de livraison sont indiqués lors de la commande et sont estimatifs. En cas de retard, le Vendeur informera le Client. Les produits numériques sont disponibles au téléchargement immédiatement après confirmation du paiement.</p>
+                
+                <h3>Article 7 : Droit de rétractation</h3>
+                <p>Conformément à l'article L.221-18 du Code de la consommation, le Client dispose d'un délai de 14 jours à compter de la réception des produits physiques pour exercer son droit de rétractation, sans avoir à justifier de motif. Les frais de retour sont à la charge du Client. Les produits numériques ne bénéficient pas de ce droit si le téléchargement a commencé après accord préalable exprès du Client et renoncement exprès à son droit de rétractation (article L.221-28 du Code de la consommation).</p>
+                
+                <h3>Article 8 : Garanties légales</h3>
+                <p>Conformément aux dispositions des articles L.217-3 à L.217-20 du Code de la consommation et 1641 et suivants du Code civil, tous les produits vendus par le Vendeur bénéficient des garanties légales.</p>
+                <p>En cas de produit défectueux (ex. : pages manquantes, défaut d'impression, mauvaise reliure), le Client peut demander :</p>
+                <ul>
+                    <li>soit l'échange du produit (dans la limite des stocks disponibles),</li>
+                    <li>soit le remboursement intégral.</li>
+                </ul>
+                <p>
+                Le Client doit faire parvenir une réclamation dans les 14 jours suivant la réception, accompagnée de photos du défaut constaté et du numéro de commande, à l'adresse suivante :
+                <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a>
+                </p>
+                <p>Pour les produits numériques, toute réclamation doit être adressée dans un délai de 7 jours suivant l'achat, si le fichier est illisible ou incomplet. Dans ce cas, un nouveau lien de téléchargement sera fourni.</p>
+                
+                <h3>Article 9 : Données personnelles</h3>
+                <p>Les données personnelles collectées lors de la commande sont utilisées pour le traitement de celle-ci et la gestion de la relation client. Elles sont traitées conformément au RGPD.</p>
+                
+                <h3>Article 10 : Responsabilité</h3>
+                <p>Le Vendeur ne saurait être tenu responsable en cas d'inexécution du contrat due à un cas de force majeure (tel que défini par les juridictions françaises) ou à une rupture de stock. Le site est accessible 24h/24 et 7j/7, sauf en cas de maintenance ou d'événement imprévisible.</p>
+                <p>Le Vendeur ne peut être tenu responsable des dommages indirects, pertes de données ou perte de chiffre d'affaires résultant de l'utilisation du site ou des produits vendus.</p>
+                
+                <h3>Article 11 : Litiges</h3>
+                <p>
+                En cas de litige, le Client peut contacter le service client à
+                <a href="mailto:nat.bissey@andrewmorrowdetective.com" style="color: white;"
+
+>nat.bissey@andrewmorrowdetective.com</a>.
+                À défaut de résolution amiable, le Client peut recourir à la médiation via la plateforme de la Commission européenne :
+                https://ec.europa.eu/consumers/odr. Les litiges sont soumis à la législation française et aux tribunaux compétents de Grasse.
+                </p>
+                
+                <h3>Article 12 : Droit applicable</h3>
+                <p>Les présentes CGV sont soumises au droit français. Toute réglementation étrangère ne peut être opposée au Vendeur.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: À propos Andrew Morrow -->
+    <div id="a-propos-andrew-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">À PROPOS - ANDREW MORROW</h2>
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(13, 63, 107, 0.3); padding: 40px; border-radius: 12px;">
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px; font-style: italic;">
+                    Je suis le détective Andrew Morrow.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Mes cheveux roux trahissent mes origines anglaises, mais mon esprit, lui, est résolument français. J'ai hérité de l'élégance de Londres, mais c'est sous le soleil de la Côte d'Azur que mon cœur s'anime pleinement.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Je ne suis pas un simple personnage de bande dessinée. J'existe entre les lignes, dans les silences des enquêtes non résolues, dans les regards échangés sur les quais de Cannes, dans les ombres dorées des ruelles de Nice ou de Saint-Tropez.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Ma vie est faite de mystères, d'instincts affûtés et d'intuitions que la raison peine parfois à expliquer. Mais une chose est certaine : mon amour pour la Côte d'Azur est infini — et tant que des secrets s'y cachent, je ne suis jamais loin.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content: L'univers -->
+    <div id="lunivers-content" class="tab-content">
+        <div style="padding: 60px 20px; min-height: 500px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">À PROPOS - L'UNIVERS</h2>
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(13, 63, 107, 0.3); padding: 40px; border-radius: 12px;">
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    On le croise rarement deux fois au même endroit. Parfois à la terrasse d'un café sur la Croisette, le regard plongé dans un journal froissé ; parfois dans une ruelle du Suquet, l'air absorbé, comme s'il poursuivait un souvenir plutôt qu'un suspect.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Andrew Morrow n'est pas un détective comme les autres. Il ne porte ni imperméable, ni loupe, mais un regard franc, un humour discret, et une capacité presque surnaturelle à lire les gens. Ses cheveux roux, héritage de ses racines anglaises, tranchent avec l'éclat pastel des façades méditerranéennes. Pourtant, il semble plus chez lui ici que n'importe où ailleurs.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Son bureau n'a pas d'adresse fixe. Il travaille là où l'enquête le mène : un bateau oublié dans le port du Moure Rouge, un palace endormi sur les hauteurs de la Californie, ou un vieux cabanon de pêcheur où l'odeur de la mer masque celle des secrets.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Les mystères qu'il résout ne font jamais la une des journaux. Ce sont des affaires de famille, des tableaux disparus, des mots tus depuis trop longtemps, des passions anciennes revenues hanter le présent. Car l'univers d'Andrew Morrow, c'est celui des non-dits, des silences éloquents, et des vérités qu'on découvre toujours trop tard.
+                </p>
+                <p style="font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                    Il est là, quelque part entre un roman de Simenon et un rêve de Marc Levy, à la frontière floue entre la réalité et la fiction. Et si vous le croisez, ne lui posez pas trop de questions : il en sait déjà bien plus qu'il n'en dira.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
+                <h2>Commande - Édition Papier</h2>
+                <input type="hidden" name="order_form" value="1">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adresse">Adresse complète *</label>
+                    <input type="text" id="adresse" name="adresse" required placeholder="Adresse de livraison">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="code_postal">Code postal *</label>
+                        <input type="text" id="code_postal" name="code_postal" required placeholder="Code postal">
+                    </div>
+                    <div class="form-group">
+                        <label for="ville">Ville *</label>
+                        <input type="text" id="ville" name="ville" required placeholder="Ville">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Téléphone (optionnel)">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantite">Quantité</label>
+                        <select id="quantite" name="quantite">
+                            <option value="1">1 exemplaire</option>
+                            <option value="2">2 exemplaires</option>
+                            <option value="3">3 exemplaires</option>
+                            <option value="4">4 exemplaires</option>
+                            <option value="5">5 exemplaires</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Commander</button>
+                <p style="font-size: 0.9em; color: #f5f5dc; margin-top: 15px; text-align: center;">
+                    En cliquant sur Commander, vous acceptez nos <a href="#" data-tab="cgv" style="color: #d4af37;">Conditions Générales de Vente</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Zone F - Footer -->
+    <footer id="zone-f">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#" data-tab="mysteres">Mystères</a></li>
+                    <li><a href="#" data-tab="flipbook">2-Faces</a></li>
+                    <li><a href="#" data-tab="achat">Achat</a></li>
+                    <li><a href="#" data-tab="auteur">Auteur</a></li>
+                    <li><a href="#" data-tab="faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>La Collection</h3>
+                <ul>
+                    <li><a href="#" data-tab="flipbook">Vol de la Palme d'Or</a></li>
+                    <li><a href="#" data-tab="flipbook">Édition Collector</a></li>
+                    <li><a href="#" data-tab="flipbook">Pages Coloriage</a></li>
+                    <li><a href="#" data-tab="flipbook">Version Numérique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>À Propos</h3>
+                <ul>
+                    <li><a href="#" data-tab="a-propos-andrew">Andrew Morrow</a></li>
+                    <li><a href="#" data-tab="lunivers">L'univers</a></li>
+                    <li><a href="#" data-tab="auteur">Témoignages</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#" data-tab="contact">NATEY Éditions</a></li>
+                    <li><a href="#" data-tab="mentions-legales">Mentions légales</a></li>
+                    <li><a href="#" data-tab="cgv">CGV</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Form validation function
+        function validateForm() {
+            const form = document.querySelector('.order-form');
+            const requiredFields = form.querySelectorAll('[required]');
+            
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = 'red';
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#d4af37';
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                showNotification("Veuillez remplir tous les champs obligatoires");
+                return false;
+            }
+            
+            // Show loading state
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderStatus = urlParams.get('order');
+            
+            if (orderStatus === 'success') {
+                showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else if (orderStatus === 'error') {
+                showNotification("Erreur lors de l'envoi de votre commande. Veuillez réessayer.");
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            // Initialize testimonial carousels
+            new TestimonialCarousel('testimonial-carousel', 'testimonial-indicators', testimonials);
+            new AchatTestimonialCarousel('achat-testimonial-carousel', achatTestimonials);
+
+            // Initialize carousels
+            new Carousel('carousel-c1', c1Items, false);
+            new Carousel('carousel-c2', c2Items, true);
+            new Carousel('carousel-c3', c3Items, true);
+
+            // Détecter l'ancre dans l'URL au chargement de la page
+            const hash = window.location.hash;
+            if (hash) {
+                const targetTabName = hash.substring(1); // Enlève le '#'
+                const validTabs = ['mysteres', 'flipbook', 'achat', 'auteur', 'faq', 'contact'];
+                
+                if (validTabs.includes(targetTabName)) {
+                    switchTab(targetTabName);
+                }
+            }
+        });
+
+
+
+        // Tab navigation functionality
+        const navButtons = document.querySelectorAll('.nav-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const footerLinks = document.querySelectorAll('footer a[data-tab]');
+
+        function switchTab(tabName) {
+            // Enlève 'active' des boutons
+            document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+
+            // Enlève 'active' et masque tous les contenus d'onglets
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+
+            // Active le bon onglet dans la navigation
+            const targetButton = document.querySelector(`[data-tab="${tabName}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+
+            // Affiche le contenu correspondant
+            const targetContent = document.getElementById(`${tabName}-content`) || document.getElementById(tabName);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                targetContent.style.display = 'block'; // Force l'affichage
+            }
+        }
+
+        // Add click event listeners to nav buttons
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                switchTab(tabName);
+            });
+        });
+
+        // Add click event listeners to footer links
+        footerLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tabName = link.getAttribute('data-tab');
+                switchTab(tabName);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Order form functionality
+        const modal = document.getElementById('orderModal');
+        const orderBtns = document.querySelectorAll('.order-btn');
+        const closeBtn = document.querySelector('.close');
+
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Success notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+
+        // Achat testimonials data
+        const achatTestimonials = [
+            {
+                quote: "Maintenant je regarde les murs autrement.",
+                author: "Brigitte",
+                profession: "mamie Cannoise",
+                age: 76,
+                location: "Cannes"
+            },
+            {
+                quote: "Wallah c'est du cinéma en papier.",
+                author: "Samir",
+                profession: "livreur Uber Eats",
+                age: 30,
+                location: "Vitrolles"
+            },
+            {
+                quote: "Un souvenir qu'on découvre aussi à l'envers.",
+                author: "Aiko",
+                profession: "étudiante en art",
+                age: 24,
+                location: "Kyoto / Marseille"
+            },
+            {
+                quote: "Ces dessins m'ont rajeuni de 40 ans. Merci pour ça. J'ai ressorti mes pinceaux.",
+                author: "Hermann",
+                profession: "retraité, illustrateur",
+                age: 64,
+                location: "Munich"
+            },
+            {
+                quote: "Une vraie pépite cette BD. Super idée le format double face BD avec l'anglais. Mes gamines ont adoré.",
+                author: "Michael",
+                profession: "Directeur commercial",
+                age: 35,
+                location: "Paris"
+            }
+        ];
+
+        // Testimonials data
+        const testimonials = [
+            {
+                quote: "Maintenant je regarde les murs autrement.",
+                author: "Brigitte",
+                profession: "retraitée",
+                age: 76,
+                location: "Cannes"
+            },
+            {
+                quote: "Wallah c'est du cinéma en papier.",
+                author: "Samir",
+                profession: "livreur Uber Eats",
+                age: 30,
+                location: "Vitrolles"
+            },
+            {
+                quote: "J'pensais que c'était nul, en vrai j'ai capté le délire. Le mec parle pas trop, mais il gère. Ça s'lit crème. J'ai pas laché",
+                author: "Hugo",
+                profession: "lycéen pro",
+                age: 17,
+                location: "Montreuil"
+            },
+            {
+                quote: "Lu dans le bus, relu à la maison. J'en ai parlé le lendemain à mes malades.",
+                author: "Fatou",
+                profession: "aide-soignante",
+                age: 38,
+                location: "Marseille"
+            },
+            {
+                quote: "Tu vois quand t'es là, genre t'écoutes pas, mais en fait tu captes tout ? Bah lui, Andrew, c'est ça. Discret mais il voit tout. Moi j'suis pas lecture, j'suis pas BD, mais là j'sais pas… c'était fluide. Et puis les dessins, gros respect. On dirait un vieux film avec un fond de trap. Chelou mais cool.",
+                author: "Momo",
+                profession: "agent municipal",
+                age: 24,
+                location: "Bobigny"
+            },
+            {
+                quote: "Un souvenir qu'on découvre aussi à l'envers.",
+                author: "Aiko",
+                profession: "étudiante en art",
+                age: 24,
+                location: "Kyoto / Marseille"
+            },
+            {
+                quote: "Ces dessins m'ont rajeuni de 40 ans. Merci pour ça. J'ai ressorti mes pinceaux.",
+                author: "Hermann",
+                profession: "retraité, illustrateur",
+                age: 64,
+                location: "Munich"
+            },
+            {
+                quote: "Moi je bosse, je cours, j'ai pas le temps. Mais là je tombe sur cette BD, on me dit \"ça c'est de la bonne BD\" — je lève les yeux au ciel. Effectivement… Le mec a du style. L'histoire tient. Y'a une vraie ambiance. Je l'ai fini dans le train entre Aulnay et l'aéroport. J'en ai parlé à ma femme au retour.",
+                author: "Youssef",
+                profession: "consultant",
+                age: 42,
+                location: "Rabat / Paris"
+            },
+            {
+                quote: "C'est une BD qui chuchote. Andrew, il est presque trop bien pour être vrai. Moi je tombe tout de suite pour des types comme ça. Une parenthèse dans ma vie. Bravo!",
+                author: "Brigitte",
+                profession: "mamie Cannoise",
+                age: 76,
+                location: "Cannes",
+                avatar: "👵"
+            },
+            {
+                quote: "Intelligent, bien écrit. On a envie de prendre le TGV pour aller voir sur place ces lieux",
+                author: "Marie",
+                profession: "graphiste",
+                age: 42,
+                location: "Lyon",
+                avatar: "👩‍💼"
+            },
+            {
+                quote: "Ces dessins m'ont rajeuni de 40 ans. Merci pour ça. J'ai ressorti mes pinceaux.",
+                author: "Hermann",
+                profession: "retraité, illustrateur",
+                age: 64,
+                location: "Munich",
+                avatar: "👴"
+            },
+            {
+                quote: "Un souvenir qu'on découvre aussi à l'envers.",
+                author: "Aiko",
+                profession: "étudiante en art",
+                age: 24,
+                location: "Kyoto / Marseille",
+                avatar: "👩‍🎨"
+            },
+            {
+                quote: "Wallah c'est du cinéma en papier.",
+                author: "Samir",
+                profession: "livreur Uber Eats",
+                age: 30,
+                location: "Vitrolles",
+                avatar: "🚗"
+            }
+        ];
+
+        // Achat Testimonial Carousel Class
+        class AchatTestimonialCarousel {
+            constructor(containerId, testimonials) {
+                this.container = document.getElementById(containerId);
+                this.testimonials = testimonials;
+                this.currentIndex = 0;
+                this.isPaused = false;
+                this.init();
+            }
+
+            init() {
+                this.createTestimonialItems();
+                this.startAutoPlay();
+                this.addEventListeners();
+            }
+
+            createTestimonialItems() {
+                this.container.innerHTML = '';
+                
+                this.testimonials.forEach((testimonial, index) => {
+                    const testimonialItem = document.createElement('div');
+                    testimonialItem.className = 'achat-testimonial-item';
+                    if (index === 0) testimonialItem.classList.add('active');
+
+                    testimonialItem.innerHTML = `
+                        <div class="achat-testimonial-quote">${testimonial.quote}</div>
+                        <div class="achat-testimonial-author">
+                            ${testimonial.author}, <span class="profession">${testimonial.profession}, ${testimonial.age} ans, ${testimonial.location}</span>
+                        </div>
+                    `;
+
+                    this.container.appendChild(testimonialItem);
+                });
+            }
+
+            nextSlide() {
+                if (this.isPaused) return;
+
+                const currentItem = this.container.children[this.currentIndex];
+                currentItem.classList.remove('active');
+                
+                this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                
+                const nextItem = this.container.children[this.currentIndex];
+                nextItem.classList.add('active');
+            }
+
+            startAutoPlay() {
+                this.intervalId = setInterval(() => {
+                    this.nextSlide();
+                }, 4000);
+            }
+
+            addEventListeners() {
+                this.container.addEventListener('mouseenter', () => {
+                    this.isPaused = true;
+                });
+
+                this.container.addEventListener('mouseleave', () => {
+                    this.isPaused = false;
+                });
+            }
+        }
+
+        // Testimonial Carousel Class
+        class TestimonialCarousel {
+            constructor(containerId, indicatorsId, testimonials) {
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = document.getElementById(indicatorsId);
+                this.testimonials = testimonials;
+                this.currentIndex = 0;
+                this.isPaused = false;
+                this.init();
+            }
+
+            init() {
+                this.createTestimonialItems();
+                this.createIndicators();
+                this.startAutoPlay();
+                this.addEventListeners();
+            }
+
+            createTestimonialItems() {
+                this.container.innerHTML = '';
+                
+                this.testimonials.forEach((testimonial, index) => {
+                    const testimonialItem = document.createElement('div');
+                    testimonialItem.className = 'testimonial-item';
+                    if (index === 0) testimonialItem.classList.add('active');
+
+                    testimonialItem.innerHTML = `
+                        <div class="testimonial-quote">${testimonial.quote}</div>
+                        <div class="testimonial-author">
+                            ${testimonial.author}, <span class="profession">${testimonial.profession}, ${testimonial.age} ans, ${testimonial.location}</span>
+                        </div>
+                    `;
+
+                    this.container.appendChild(testimonialItem);
+                });
+            }
+
+            createIndicators() {
+                this.indicatorsContainer.innerHTML = '';
+                
+                this.testimonials.forEach((_, index) => {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    this.indicatorsContainer.appendChild(indicator);
+                });
+            }
+
+            nextSlide() {
+                if (this.isPaused) return;
+
+                const currentItem = this.container.children[this.currentIndex];
+                const currentIndicator = this.indicatorsContainer.children[this.currentIndex];
+                
+                currentItem.classList.remove('active');
+                currentIndicator.classList.remove('active');
+                
+                this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                
+                const nextItem = this.container.children[this.currentIndex];
+                const nextIndicator = this.indicatorsContainer.children[this.currentIndex];
+                
+                nextItem.classList.add('active');
+                nextIndicator.classList.add('active');
+            }
+
+            startAutoPlay() {
+                this.intervalId = setInterval(() => {
+                    this.nextSlide();
+                }, 4000);
+            }
+
+            addEventListeners() {
+                this.container.addEventListener('mouseenter', () => {
+                    this.isPaused = true;
+                });
+
+                this.container.addEventListener('mouseleave', () => {
+                    this.isPaused = false;
+                });
+            }
+        }
+
+        // Carousel functionality
+        class Carousel {
+            constructor(containerId, items, hasComments = false) {
+                this.container = document.getElementById(containerId);
+                this.items = items;
+                this.hasComments = hasComments;
+                this.currentIndex = 0;
+                this.init();
+            }
+
+            init() {
+                this.createCarouselItems();
+                this.startAutoPlay();
+            }
+
+            createCarouselItems() {
+                this.container.innerHTML = '';
+                
+                this.items.forEach((item, index) => {
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = 'carousel-item';
+                    if (index === 0) carouselItem.classList.add('active');
+
+                    if (item.type === 'video') {
+                        const video = document.createElement('video');
+                        video.autoplay = true;
+                        video.muted = true;
+                        video.loop = true;
+                        video.playsInline = true;
+                        video.setAttribute('webkit-playsinline', true);
+                        video.alt = `Vidéo Andrew Morrow Detective - ${item.comment || 'Mystère'}`;
+                        
+                        const source = document.createElement('source');
+                        source.src = item.url;
+                        source.type = 'video/mp4';
+                        video.appendChild(source);
+                        
+                        carouselItem.appendChild(video);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = item.url;
+                        img.alt = item.comment || `Andrew Morrow Detective - Mystère de la Côte d'Azur`;
+                        carouselItem.appendChild(img);
+                    }
+
+                    if (this.hasComments && item.comment) {
+                        const commentZone = document.createElement('div');
+                        commentZone.className = 'comment-zone';
+                        commentZone.innerHTML = `<p>${item.comment}</p>`;
+                        carouselItem.appendChild(commentZone);
+                    }
+
+                    this.container.appendChild(carouselItem);
+                });
+            }
+
+            nextSlide() {
+                const currentItem = this.container.children[this.currentIndex];
+                currentItem.classList.remove('active');
+                
+                this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                
+                const nextItem = this.container.children[this.currentIndex];
+                nextItem.classList.add('active');
+            }
+
+            startAutoPlay() {
+                setInterval(() => {
+                    this.nextSlide();
+                }, 2000);
+            }
+        }
+
+        // Carousel data
+        const c1Items = [
+            { type: 'image', url: 'images/1M1.png', comment: 'La Côte d\'Azur fascine, mais elle ne supporte pas la lumière' },
+            { type: 'image', url: 'images/2M1.png', comment: 'Des testaments verrouillés, des successions contestées' },
+            { type: 'image', url: 'images/3M1.png', comment: 'Les scandales sont recouverts de silence doré' },
+            { type: 'image', url: 'images/4M1.png', comment: 'Certains noms ont leurs secrets et des moyens pour les garder' },
+            { type: 'image', url: 'images/andrew et son tel.png', comment: 'Andrew Morrow voit ce que personne ne regarde' }
+        ];
+
+        const c2Items = [
+            { 
+                type: 'video', 
+                url: '',
+                comment: 'Il parle peu. Il voit tout.'
+            },
+            { 
+                type: 'video', 
+                url: 'M2V2.mp4',
+                comment: 'Il intervient quand la police ne peut pas. Ou ne doit pas.'
+            },
+            { 
+                type: 'video', 
+                url: 'M2V3.mp4',
+                comment: 'Rien n\'est certain. Mais tout le monde sait qu\'il n\'échoue jamais.'
+            },
+            { 
+                type: 'video', 
+                url: 'M2V4.mp4',
+                comment: 'Il ne cherche pas la vérité. Il cherche ce que vous n\'osez pas dire.'
+            },
+            { 
+                type: 'video', 
+                url: 'M2V5.mp4',
+                comment: 'Il est efficace et rapide.'
+            }
+        ];
+
+        const c3Items = [
+            { 
+                type: 'image', 
+                url: 'images/M3P1.jpeg',
+                comment: 'Ce n\'est qu\'au premier regard que tout semble idyllique sur le tapis rouge du Palais des Festivals.'
+            },
+            { 
+                type: 'image', 
+                url: 'images/M3P2.jpeg',
+                comment: 'Majestueusement, il garde le secret des talons noirs…'
+            },
+            { 
+                type: 'image', 
+                url: 'images/M3P3.jpeg',
+                comment: '…et de cette silhouette évanescente, surgie une nuit de silence sur le tapis rouge désert…'
+            },
+            { 
+                type: 'image', 
+                url: 'images/M3P4.jpeg',
+                comment: 'Avec la Palme d\'or… … … disparue !'
+            },
+            { 
+                type: 'image', 
+                url: 'images/M3P5.jpeg',
+                comment: 'Andrew Morrow est déjà en route pour la retrouver… et éviter un scandale.'
+            }
+        ];
+    </script>
+
+    <script>
+    function showNotification(message) {
+        alert(message); // Vous pouvez remplacer par une notification plus élégante
+    }
+
+    function validateOrderForm(form) {
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('error');
+                isValid = false;
+            } else {
+                field.classList.remove('error');
+            }
+        });
+
+        const emailField = form.querySelector('input[type="email"]');
+        if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+            emailField.classList.add('error');
+            showNotification("Veuillez entrer une adresse email valide");
+            return false;
+        }
+
+        if (!isValid) {
+            showNotification("Veuillez remplir tous les champs obligatoires");
+            return false;
+        }
+
+        const submitBtn = form.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+        }
+
+        return true;
+    }
+    </script>
+
+    <script>
+    function isWebView() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        return /FBAN|FBAV|Instagram/.test(ua);
+    }
+
+    if (isWebView()) {
+        if (confirm("Pour profiter pleinement de l'univers Andrew Morrow, veuillez ouvrir ce lien dans un vrai navigateur.")) {
+            window.location.href = "./?from=app";
+        }
+    }
+    </script>
+
+
+
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtdm%2F2J5E5Z7eF4oe7ICEaVjIorTCZLJjXmUWBP0Hk7lJ%2BUfSTEVKV4HRPcz9D80PsXoCKzU8i3zk0esklGNepYE5ORgTbX7HzRywjtu2nSt5z46yVBj%2BL%2FDJjIih%2FMfwY8XIwkJdlBYk92mg5ud5glvxcLlSdVPpK3sCcohOHKrdaYNEcaOBwV%2B9kBG7OZ5NL7tPUXGRA1VJ6W0Voo6ojzuwXUvG%2BdAekGl0zkAo3cv6i%2BKuwU5YV7wtgH8aV7yqkzCFlwt5SHFIyiqZOPsuiNBnfnXIgc7gRzVOSLv5qlCCyMrIeEhDq2EFmMzIo2nD25p23ZCEyI6QaJW2Eoe9MN76xIhRkIAXsjtw977WwPhi5VtYxUpjPerWMVX0muBvQuNrIP%2FwAcWW19%2FexZtATpAvZduWT2A6iAXc4%2FsMMnvZ3%2BEcCMSpB2zNrWGm1agw6CSGZgowY%2BadgO1HVwTfTqhtEo%2BY4ndPCovPbZLNM0N%2Fo%2FeXitXb8kz%2BZ0N657g%2B7fiqOeLKjFVc%2Bl%2Bq%2BwGhRE%3D";
+        window.__genspark_locale = "fr-FR";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtdm/2J5E5Z7eF4oe7ICEaVjIorTCZLJjXmUWBP0Hk7lJ+UfSTEVKV4HRPcz9D80PsXoCKzU8i3zk0esklGNepYE5ORgTbX7HzRywjtu2nSt5z46yVBj+L/DJjIih/MfwY8XIwkJdlBYk92mg5ud5glvxcLlSdVPpK3sCcohOHKrdaYNEcaOBwV+9kBG7OZ5NL7tPUXGRA1VJ6W0Voo6ojzuwXUvG+dAekGl0zkAo3cv6i+KuwU5YV7wtgH8aV7yqkzCFlwt5SHFIyiqZOPsuiNBnfnXIgc7gRzVOSLv5qlCCyMrIeEhDq2EFmMzIo2nD25p23ZCEyI6QaJW2Eoe9MN76xIhRkIAXsjtw977WwPhi5VtYxUpjPerWMVX0muBvQuNrIP/wAcWW19/exZtATpAvZduWT2A6iAXc4/sMMnvZ3+EcCMSpB2zNrWGm1agw6CSGZgowY+adgO1HVwTfTqhtEo+Y4ndPCovPbZLNM0N/o/eXitXb8kz+Z0N657g+7fiqOeLKjFVc+l+q+wGhRE=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
