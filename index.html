@@ -2207,17 +2207,14 @@
         }
 
         const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
 
+        // Utiliser no-cors + FormData pour éviter les préflight/CORS lors du test (webhook.site)
         fetch(webhookUrl, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            mode: 'no-cors',
+            body: formData
         })
-        .then(async (res) => {
-            if (!res.ok) throw new Error('Request failed');
-            // Best effort read
-            try { await res.json(); } catch (_) {}
+        .then(() => {
             showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
             window.location.href = '/?order=success#achat';
         })
