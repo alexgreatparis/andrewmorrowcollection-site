@@ -22,6 +22,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Webhook endpoint for order form (set to your n8n webhook URL) -->
+    <meta name="am-webhook" content="">
     
     <!-- Styles de transition pour les thèmes -->
     <!-- SUPPRIMER tout ce qui concerne les transitions de thème -->
@@ -1459,7 +1461,7 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
+            <form class="order-form" method="POST" action="#" onsubmit="return submitOrderViaWebhook(event, this)">  
                 <h2>Commande - Édition Papier</h2>
                 <input type="hidden" name="order_form" value="1">
                 
@@ -2184,6 +2186,51 @@
         if (confirm("Pour profiter pleinement de l'univers Andrew Morrow, veuillez ouvrir ce lien dans un vrai navigateur.")) {
             window.location.href = "./?from=app";
         }
+    }
+    </script>
+
+    <script>
+    // Submit order form to a configurable webhook (n8n, serverless, etc.)
+    function submitOrderViaWebhook(event, form) {
+        event.preventDefault();
+        if (!validateOrderForm(form)) {
+            return false;
+        }
+
+        const webhookMeta = document.querySelector('meta[name="am-webhook"]');
+        const webhookUrl = webhookMeta && webhookMeta.content ? webhookMeta.content.trim() : '';
+        if (!webhookUrl) {
+            showNotification("Service de commande indisponible (webhook non configuré)");
+            const btn = form.querySelector('.submit-btn');
+            if (btn) { btn.disabled = false; btn.textContent = 'Commander'; }
+            return false;
+        }
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(async (res) => {
+            if (!res.ok) throw new Error('Request failed');
+            // Best effort read
+            try { await res.json(); } catch (_) {}
+            showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
+            window.location.href = '/?order=success#achat';
+        })
+        .catch(() => {
+            showNotification("Erreur lors de l'envoi de votre commande. Veuillez réessayer.");
+            window.location.href = '/?order=error#achat';
+        })
+        .finally(() => {
+            const btn = form.querySelector('.submit-btn');
+            if (btn) { btn.disabled = false; btn.textContent = 'Commander'; }
+        });
+
+        return false;
     }
     </script>
 
