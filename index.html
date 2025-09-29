@@ -22,6 +22,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    
     <!-- Webhook endpoint for order form (set to your n8n webhook URL) -->
     <meta name="am-webhook" content="https://4fdc4e97d721f5b0cd4760aa9050d6f0.m.pipedream.net">
     
@@ -1115,7 +1116,7 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
-                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                        <a href="#" onclick="return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Payer 14€</a>
                     </div>
                 </div>
                 
@@ -1132,7 +1133,7 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
-                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                        <a href="#" onclick="return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Payer 18€</a>
                     </div>
                 </div>
             </div>
@@ -1228,7 +1229,7 @@
                     
                     <div class="faq-item">
                         <div class="faq-question">🔵 Y a-t-il des frais de port ?</div>
-                        <div class="faq-answer">2,50€ pour la France.</div>
+                        <div class="faq-answer">Non, les frais de port sont inclus dans le prix de 18€.</div>
                     </div>
                     
                     <div class="faq-item">
@@ -1461,7 +1462,7 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="order-form" method="POST" action="#" onsubmit="return submitOrderViaWebhook(event, this)">  
+            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
                 <h2>Commande - Édition Papier</h2>
                 <input type="hidden" name="order_form" value="1">
                 
@@ -1566,6 +1567,8 @@
         </div>
     </footer>
 
+    
+    
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Form validation function
         function validateForm() {
@@ -2137,6 +2140,34 @@
     </script>
 
     <script>
+    // Notify via webhook (compatible GitHub Pages) then open Stripe Payment Link
+    function notifyAndGo(productName, priceLabel, stripeUrl) {
+        const meta = document.querySelector('meta[name="am-webhook"]');
+        const webhookUrl = meta && meta.content ? meta.content.trim() : '';
+        try {
+            if (webhookUrl) {
+                // Fire-and-forget with keepalive so it survives navigation/open
+                fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: 'stripe_intent',
+                        product: productName,
+                        price: priceLabel,
+                        ts: new Date().toISOString(),
+                        ua: navigator.userAgent
+                    }),
+                    keepalive: true
+                }).catch(() => {});
+            }
+        } catch (e) { /* ignore */ }
+        // Always open Stripe immediately
+        window.open(stripeUrl, '_blank');
+        return false; // prevent default
+    }
+    </script>
+
+    <script>
     function showNotification(message) {
         alert(message); // Vous pouvez remplacer par une notification plus élégante
     }
@@ -2189,47 +2220,7 @@
     }
     </script>
 
-    <script>
-    // Submit order form to a configurable webhook (n8n, serverless, etc.)
-    function submitOrderViaWebhook(event, form) {
-        event.preventDefault();
-        if (!validateOrderForm(form)) {
-            return false;
-        }
-
-        const webhookMeta = document.querySelector('meta[name="am-webhook"]');
-        const webhookUrl = webhookMeta && webhookMeta.content ? webhookMeta.content.trim() : '';
-        if (!webhookUrl) {
-            showNotification("Service de commande indisponible (webhook non configuré)");
-            const btn = form.querySelector('.submit-btn');
-            if (btn) { btn.disabled = false; btn.textContent = 'Commander'; }
-            return false;
-        }
-
-        const formData = new FormData(form);
-
-        // Utiliser no-cors + FormData pour éviter les préflight/CORS lors du test (webhook.site)
-        fetch(webhookUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-        })
-        .then(() => {
-            showNotification("Votre commande a été transmise, vous recevrez une confirmation par email");
-            window.location.href = '/?order=success#achat';
-        })
-        .catch(() => {
-            showNotification("Erreur lors de l'envoi de votre commande. Veuillez réessayer.");
-            window.location.href = '/?order=error#achat';
-        })
-        .finally(() => {
-            const btn = form.querySelector('.submit-btn');
-            if (btn) { btn.disabled = false; btn.textContent = 'Commander'; }
-        });
-
-        return false;
-    }
-    </script>
+    
 
 
 

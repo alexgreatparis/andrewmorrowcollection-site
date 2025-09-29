@@ -22,6 +22,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Stripe Payment Link -->
+    <meta name="stripe-payment-link" content="https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00">
+    <!-- Webhook endpoint for order form (set to your n8n webhook URL) -->
+    <meta name="am-webhook" content="https://4fdc4e97d721f5b0cd4760aa9050d6f0.m.pipedream.net">
     
     <!-- Styles de transition pour les thèmes -->
     <!-- SUPPRIMER tout ce qui concerne les transitions de thème -->
@@ -1063,31 +1067,16 @@
                   </div>
                 </div>
               </div>
+              
+              <!-- Bouton J'achète -->
+              <div style="text-align: center; margin-top: 40px;">
+                <button onclick="switchTab('achat')" style="background: linear-gradient(135deg, #d4af37, #f0d858); color: #0d3f6b; border: none; padding: 20px 50px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 1.3em; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); transition: all 0.3s ease;">
+                  👍 YES! J'ACHÈTE...
+                </button>
+              </div>
             </div>
 
-            <!-- Ajout de la section Achat -->
-            <div class="achat-section">
-                <!-- Édition Papier -->
-                <div class="achat-box" style="background: rgba(13, 63, 107, 0.3); border: 2px solid #d4af37; padding: 30px; margin: 20px; width: 300px;">
-                    <h3>Édition Papier</h3>
-                    <button class="cta-button order-btn">Commander tout de suite</button>
-                    <p style="font-size: 2em; color: #d4af37;">14€</p>
-                    <p style="margin-bottom: 10px;">BD Français - Anglais "2-Faces"</p>
-                    <p>Livraison rapide</p>
-                    <p>Paiement sécurisé</p>
-                    <p>via PayPal & Stripe</p>
-                </div>
 
-                <!-- Version Numérique -->
-                <div class="achat-box" style="background: rgba(5, 38, 68, 0.8); border: 2px solid #d4af37; padding: 30px; margin: 20px; width: 300px;">
-                    <h3>Version Numérique</h3>
-                    <button class="cta-button order-btn">Télécharger tout de suite</button>
-                    <p style="font-size: 2em; color: #d4af37;">3€</p>
-                    <p>Téléchargement immédiat</p>
-                    <p>Compatible tablette & smartphone</p>
-                    <p>Paiement sécurisé via Amazon</p>
-                </div>
-            </div>
                 
         </div>
     </div>
@@ -1113,21 +1102,40 @@
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
                 
-                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37;">
-                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">Édition Papier</h3>
-                    <p style="font-size: 2em; color: #d4af37; margin: 20px 0;">14€</p>
-                    <p style="margin-bottom: 10px;">BD Français - Anglais "2-Faces"</p>
-                    <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
-                    <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em;">Commander</button>
+                <!-- Carte Édition Papier avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_cannes.png" alt="Couverture BD 2-Faces" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
+                    
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">OÙ EST CACHÉE LA PALME D'OR ?</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
                 </div>
                 
-                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37;">
-                    <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em;">Version Numérique</h3>
-                    <p style="font-size: 2em; color: #d4af37; margin: 20px 0;">3€</p>
-                    <p style="margin-bottom: 20px;">Téléchargement immédiat</p>
-                    <button style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em;">Télécharger</button>
+                <!-- Carte Édition Monaco avec Image -->
+                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                    <!-- Image de la couverture -->
+                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/recto_0_monaco.png" alt="Couverture BD 2-Faces Monaco" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </div>
+                    
+                    <!-- Informations du produit -->
+                    <div style="flex: 1;">
+                        <h3 style="color: #d4af37; margin-bottom: 15px; font-size: 1.5em; font-family: 'Cinzel', serif;">COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
+                        <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
+                        <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
+                        <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,50€</p>
+                        <button class="order-btn" style="background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif;">Commander</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1222,7 +1230,7 @@
                     
                     <div class="faq-item">
                         <div class="faq-question">🔵 Y a-t-il des frais de port ?</div>
-                        <div class="faq-answer">2,50€ pour la France.</div>
+                        <div class="faq-answer">Non, les frais de port sont inclus dans le prix de 18€.</div>
                     </div>
                     
                     <div class="faq-item">
@@ -1455,7 +1463,7 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="order-form" method="POST" action="process_order.php" onsubmit="return validateOrderForm(this)">  
+            <form class="order-form" method="POST" action="#" onsubmit="return submitOrderViaPaymentLink(event, this)">  
                 <h2>Commande - Édition Papier</h2>
                 <input type="hidden" name="order_form" value="1">
                 
@@ -1508,7 +1516,7 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="submit-btn">Commander</button>
+                <button type="submit" class="submit-btn">Payer 18€ avec Stripe</button>
                 <p style="font-size: 0.9em; color: #f5f5dc; margin-top: 15px; text-align: center;">
                     En cliquant sur Commander, vous acceptez nos <a href="#" data-tab="cgv" style="color: #d4af37;">Conditions Générales de Vente</a>
                 </p>
@@ -1560,6 +1568,9 @@
         </div>
     </footer>
 
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Form validation function
         function validateForm() {
@@ -2180,6 +2191,77 @@
         if (confirm("Pour profiter pleinement de l'univers Andrew Morrow, veuillez ouvrir ce lien dans un vrai navigateur.")) {
             window.location.href = "./?from=app";
         }
+    }
+    </script>
+
+    <script>
+    // Submit order form to a configurable webhook (n8n, serverless, etc.)
+    function submitOrderViaPaymentLink(event, form) {
+        event.preventDefault();
+        if (!validateOrderForm(form)) {
+            return false;
+        }
+
+        // Récupérer le lien de paiement Stripe
+        const paymentLinkMeta = document.querySelector('meta[name="stripe-payment-link"]');
+        const paymentLink = paymentLinkMeta && paymentLinkMeta.content ? paymentLinkMeta.content.trim() : '';
+        
+        if (!paymentLink) {
+            showNotification("Lien de paiement non configuré. Veuillez contacter l'administrateur.");
+            return false;
+        }
+
+        const submitBtn = form.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Redirection vers Stripe...';
+        }
+
+        // Collecter les informations du formulaire pour les passer en paramètres
+        const formData = new FormData(form);
+        const orderData = {
+            nom: formData.get('nom'),
+            prenom: formData.get('prenom'),
+            email: formData.get('email'),
+            adresse: formData.get('adresse'),
+            code_postal: formData.get('code_postal'),
+            ville: formData.get('ville'),
+            telephone: formData.get('telephone'),
+            quantite: formData.get('quantite')
+        };
+
+        // Générer un numéro de commande unique
+        const orderNumber = "AM" + new Date().toISOString().slice(0,10).replace(/-/g, '') + "-" + Math.random().toString(36).substr(2, 6).toUpperCase();
+        
+        // Sauvegarder les informations de commande en attente
+        const orderInfo = {
+            order_number: orderNumber,
+            ...orderData,
+            status: 'pending',
+            created_at: new Date().toISOString(),
+            payment_link: paymentLink
+        };
+
+        // Sauvegarder dans localStorage pour récupération après paiement
+        localStorage.setItem('pending_order_' + orderNumber, JSON.stringify(orderInfo));
+        
+        // Construire l'URL avec les paramètres pré-remplis
+        const url = new URL(paymentLink);
+        
+        // Ajouter les informations client comme paramètres (si Stripe les supporte)
+        url.searchParams.set('prefill_email', orderData.email);
+        url.searchParams.set('client_reference_id', orderNumber);
+        
+        // Rediriger vers Stripe
+        window.location.href = url.toString();
+        
+        return false;
+    }
+
+    // Fonction pour ouvrir directement le Payment Link Stripe
+    function openPaymentLink() {
+        const paymentLink = 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00';
+        window.open(paymentLink, '_blank');
     }
     </script>
 
