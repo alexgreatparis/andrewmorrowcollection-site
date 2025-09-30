@@ -945,6 +945,35 @@
         transform: translateY(-2px);
     }
 
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+        .navigation { gap: 12px; }
+        .nav-button { padding: 12px 10px; font-size: 14px; }
+        .main-container { grid-template-columns: 1fr; gap: 14px; }
+        .left-column, .right-column { grid-template-rows: auto; }
+
+        /* Achat cards stack and breathe */
+        #achat-content .achat-testimonials { margin: 16px 0; }
+        #achat-content .achat-testimonial-carousel { height: auto; min-height: 140px; }
+        #achat-content .achat-testimonial-quote { font-size: 1.05em; }
+
+        /* Product cards */
+        #achat-content .product-card { flex-direction: row; align-items: center; }
+        #achat-content .product-card .cover { width: 96px; height: 128px; }
+        #achat-content .product-card .pay-btn { width: 100%; text-align: center; display: inline-block; }
+
+        /* General paddings */
+        [id^="zone-"] { padding: 16px 14px !important; }
+    }
+
+    @media (max-width: 480px) {
+        .nav-button { font-size: 12px; letter-spacing: 1px; padding: 10px 8px; }
+        #achat-content h2 { font-size: 1.8em !important; }
+        #achat-content h3 { font-size: 1.2em !important; }
+        #achat-content .product-card { gap: 14px !important; padding: 20px !important; }
+        #achat-content .product-card .cover { width: 84px; height: 112px; }
+    }
+
     </style>
     <script defer data-domain="andrewmorrowdetective.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 </head>
@@ -1104,9 +1133,9 @@
             <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
                 
                 <!-- Carte Édition Papier avec Image -->
-                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                <div class="product-card" style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
                     <!-- Image de la couverture -->
-                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                    <div class="cover" style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
                         <img src="images/recto_0_cannes.png" alt="Couverture BD 2-Faces" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                     </div>
                     
@@ -1116,14 +1145,14 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,80€</p>
-                        <a href="#" onclick="return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
+                        <a class="pay-btn" href="#" onclick="return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
                     </div>
                 </div>
                 
                 <!-- Carte Édition Monaco avec Image -->
-                <div style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
+                <div class="product-card" style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
                     <!-- Image de la couverture -->
-                    <div style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                    <div class="cover" style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
                         <img src="images/recto_0_monaco.png" alt="Couverture BD 2-Faces Monaco" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                     </div>
                     
@@ -1133,7 +1162,7 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,80€</p>
-                        <a href="#" onclick="return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
+                        <a class="pay-btn" href="#" onclick="return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
                     </div>
                 </div>
             </div>
