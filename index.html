@@ -10,6 +10,9 @@
     <meta name="keywords" content="Andrew Morrow, détective, BD policière, Côte d'Azur, Cannes, 2-Faces, coloriage, mystère français, bande dessinée, prix littéraire">
     <meta name="author" content="Nat Bissey">
     <link rel="canonical" href="https://andrewmorrowdetective.com">
+    <link rel="preconnect" href="https://plausible.io" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Andrew Morrow Detective - Mystères de la Côte d'Azur">
@@ -17,6 +20,85 @@
     <meta property="og:image" content="images/1M1.png">
     <meta property="og:url" content="https://andrewmorrowdetective.com">
     <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Andrew Morrow Detective - Mystères de la Côte d'Azur">
+    <meta name="twitter:description" content="BD bilingue (FR/EN) – Vol de la Palme d'Or, Monte‑Carlo. Découvrez Andrew Morrow.">
+    <meta name="twitter:image" content="images/1M1.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NATEY Editions",
+      "url": "https://andrewmorrowdetective.com",
+      "logo": "https://andrewmorrowdetective.com/images/1M1.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://andrewmorrowdetective.com",
+      "name": "Andrew Morrow Detective",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=site:andrewmorrowdetective.com+{search_term}",
+        "query-input": "required name=search_term"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "OÙ EST CACHÉE LA PALME D'OR ? (BD bilingue)",
+      "image": ["https://andrewmorrowdetective.com/andrewmorrowcollection-site/images/recto_0_cannes.png"],
+      "brand": {"@type": "Brand", "name": "Andrew Morrow Detective"},
+      "offers": {
+        "@type": "Offer",
+        "price": "14.00",
+        "priceCurrency": "EUR",
+        "url": "https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "COURSE CONTRE LA MONTRE À MONTE‑CARLO ! (BD bilingue)",
+      "image": ["https://andrewmorrowdetective.com/andrewmorrowcollection-site/images/recto_0_monaco.png"],
+      "brand": {"@type": "Brand", "name": "Andrew Morrow Detective"},
+      "offers": {
+        "@type": "Offer",
+        "price": "18.00",
+        "priceCurrency": "EUR",
+        "url": "https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quels sont les modes de paiement ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Paiement par lien PayPal. Carte bancaire via Stripe à venir."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les frais de port ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "2,80€ en France métropolitaine."}
+        }
+      ]
+    }
+    </script>
     
     <!-- Cache Busting -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1202,7 +1284,7 @@
                 <div class="product-card" style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
                     <!-- Image de la couverture -->
                     <div class="cover" style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/recto_0_cannes.png" alt="Couverture BD 2-Faces" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                        <img src="images/recto_0_cannes.png" alt="Couverture BD bilingue Où est cachée la Palme d'Or ?" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                     </div>
                     
                     <!-- Informations du produit -->
@@ -1211,7 +1293,7 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">14€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,80€</p>
-                        <a class="pay-btn" href="#" onclick="return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
+                        <a class="pay-btn" href="#" onclick="plausible('Commander 14€'); return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
                     </div>
                 </div>
                 
@@ -1219,7 +1301,7 @@
                 <div class="product-card" style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
                     <!-- Image de la couverture -->
                     <div class="cover" style="flex-shrink: 0; width: 120px; height: 160px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/recto_0_monaco.png" alt="Couverture BD 2-Faces Monaco" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                        <img src="images/recto_0_monaco.png" alt="Couverture BD bilingue Course contre la montre à Monte‑Carlo" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #d4af37; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
                     </div>
                     
                     <!-- Informations du produit -->
@@ -1228,7 +1310,7 @@
                         <p style="color: #f5f5dc; margin-bottom: 10px; font-size: 1em; font-family: 'Playfair Display', serif;">BD / FRANÇAIS - ANGLAIS / 2-FACES</p>
                         <p style="font-size: 2.5em; color: #d4af37; margin: 15px 0; font-weight: bold;">18€</p>
                         <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 20px;">+ Frais de port : 2,80€</p>
-                        <a class="pay-btn" href="#" onclick="return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
+                        <a class="pay-btn" href="#" onclick="plausible('Commander 18€'); return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')" target="_blank" style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none;">Commander</a>
                     </div>
                 </div>
             </div>
