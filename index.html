@@ -958,9 +958,13 @@
         #achat-content .achat-testimonial-quote { font-size: 1.05em; }
 
         /* Product cards */
-        #achat-content .product-card { flex-direction: row; align-items: center; }
+        #achat-content .product-card { flex-direction: column; align-items: stretch; }
         #achat-content .product-card .cover { width: 96px; height: 128px; }
         #achat-content .product-card .pay-btn { width: 100%; text-align: center; display: inline-block; }
+        #achat-content .cover { margin: 0 auto 12px; }
+
+        /* Grid becomes single column */
+        #achat-content .achat-grid { grid-template-columns: 1fr !important; }
 
         /* General paddings */
         [id^="zone-"] { padding: 16px 14px !important; }
@@ -1130,7 +1134,7 @@
                 </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <div class="achat-grid" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
                 
                 <!-- Carte Édition Papier avec Image -->
                 <div class="product-card" style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; gap: 25px; align-items: center;">
