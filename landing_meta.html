@@ -503,6 +503,34 @@
                 box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
             }
         }
+
+        /* Mobile Text Optimization */
+        .concept-text-container {
+            background: rgba(13, 63, 107, 0.3);
+            border-radius: 18px;
+            padding: 40px 36px 32px 36px;
+            margin-bottom: 38px;
+            box-shadow: 0 4px 24px rgba(13, 63, 107, 0.10);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .concept-text-container {
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                border: none !important;
+                margin-bottom: 20px !important;
+            }
+
+            .concept-text-container p {
+                font-size: 1.1em !important;
+                line-height: 1.6 !important;
+            }
+        }
     </style>
 </head>
 
@@ -714,8 +742,7 @@
                         Votre navigateur ne prend pas en charge cette vidéo.
                     </video>
                 </div>
-                <div
-                    style="background: rgba(13, 63, 107, 0.3); border-radius: 18px; padding: 40px 36px 32px 36px; margin-bottom: 38px; box-shadow: 0 4px 24px rgba(13,63,107,0.10); max-width: 900px; margin-left: auto; margin-right: auto; text-align:left;">
+                <div class="concept-text-container">
                     <p
                         style="font-size: 1em; line-height: 1.5; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 18px;">
                         D'un côté, une enquête policière racontée en images avec du texte en <span
