@@ -528,6 +528,12 @@
             padding: 40px 36px 32px 36px;
         }
 
+        .currency-symbol {
+            font-size: 0.6em;
+            vertical-align: 0.1em;
+            margin-left: 2px;
+        }
+
         @media (max-width: 900px) {
             .concept-text-container {
                 background: transparent !important;
@@ -546,6 +552,7 @@
             .flipbook-text {
                 background: transparent !important;
                 padding: 0 !important;
+                border: none !important;
                 border-radius: 0 !important;
                 box-shadow: none !important;
                 width: 100% !important;
@@ -625,12 +632,13 @@
                         Pack Noel
                     </h3>
                     <p
-                        style="color: #f5f5dc; margin-bottom: 15px; font-size: 1.4em; font-family: 'Playfair Display', serif; font-style: italic; text-align: center;">
+                        style="color: #f5f5dc; margin-bottom: 5px; font-size: 1.4em; font-family: 'Playfair Display', serif; font-style: italic; text-align: center;">
                         Les 2 BD
                     </p>
                     <p
-                        style="font-size: 3.2em; color: #d4af37; margin: 5px 0; font-weight: bold; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); text-align: center;">
-                        30€ <span style="font-size: 0.5em; font-weight: normal; color: #f5f5dc; opacity: 0.9;"><span
+                        style="font-size: 3.2em; color: #d4af37; margin: 0; font-weight: bold; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); text-align: center;">
+                        30<span class="currency-symbol">€</span> <span
+                            style="font-size: 0.5em; font-weight: normal; color: #f5f5dc; opacity: 0.9;"><span
                                 style="text-decoration: line-through;">32€</span></span>
                     </p>
                     <a class="pay-btn" href="#"
@@ -688,9 +696,10 @@
                     <img src="images/recto_0_cannes.png" alt="Couverture BD"
                         style="width: 150px; border-radius: 8px; border: 2px solid #d4af37; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 
-                    <h3 style="color: #d4af37; margin-bottom: 10px; font-size: 1.3em; font-family: 'Cinzel', serif;">
+                    <h3 style="color: #d4af37; margin-bottom: 5px; font-size: 1.3em; font-family: 'Cinzel', serif;">
                         OÙ EST CACHÉE LA PALME D'OR ?</h3>
-                    <p style="font-size: 2em; color: #d4af37; margin: 10px 0; font-weight: bold;">14€</p>
+                    <p style="font-size: 2em; color: #d4af37; margin: 0 0 10px 0; font-weight: bold;">14<span
+                            class="currency-symbol">€</span></p>
                     <a class="pay-btn" href="#"
                         onclick="plausible('Commander 14€'); return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/dRm8wO9nc9l4bTq6aUdUY01')"
                         target="_blank"
@@ -730,9 +739,10 @@
                     <img src="images/recto_0_monaco.png" alt="Couverture BD"
                         style="width: 150px; border-radius: 8px; border: 2px solid #d4af37; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 
-                    <h3 style="color: #d4af37; margin-bottom: 10px; font-size: 1.3em; font-family: 'Cinzel', serif;">
+                    <h3 style="color: #d4af37; margin-bottom: 5px; font-size: 1.3em; font-family: 'Cinzel', serif;">
                         COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
-                    <p style="font-size: 2em; color: #d4af37; margin: 10px 0; font-weight: bold;">18€</p>
+                    <p style="font-size: 2em; color: #d4af37; margin: 0 0 10px 0; font-weight: bold;">18<span
+                            class="currency-symbol">€</span></p>
                     <a class="pay-btn" href="#"
                         onclick="plausible('Commander 18€'); return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/3cIaEW0QG9l42iQbvedUY00')"
                         target="_blank"
