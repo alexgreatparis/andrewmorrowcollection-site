@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Meta Tags - Optimized for Conversion -->
+    <title>Andrew Morrow - Édition Collector & Packs Noël | BD Bilingue 2-Faces</title>
+    <meta name="description"
+        content="Offrez l'originalité pour Noël : La première BD policière bilingue (Français/Anglais) et réversible. Une enquête captivante sur la Côte d'Azur. Packs Collector disponibles.">
+    <meta name="keywords"
+        content="Cadeau Noël original, BD bilingue, apprendre anglais, Andrew Morrow, détective, Côte d'Azur, livre cadeau, édition collector">
+    <meta name="author" content="Nat Bissey">
+    <link rel="canonical" href="https://andrewmorrowdetective.com/landing.html">
+    <link rel="preconnect" href="https://plausible.io" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Le Cadeau Idéal : BD Policière Bilingue & Réversible">
+    <meta property="og:description"
+        content="Découvrez le concept unique 2-Faces : Une enquête en français d'un côté, en anglais de l'autre. Le cadeau parfait pour les amoureux de la Côte d'Azur.">
+    <meta property="og:image" content="images/1M1.png">
+    <meta property="og:url" content="https://andrewmorrowdetective.com/landing.html">
+    <meta property="og:type" content="product">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/riviera.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap?v=2.8.001"
+        rel="stylesheet">
+
+    <script defer data-domain="andrewmorrowdetective.com"
+        src="https://plausible.io/js/script.outbound-links.js"></script>
+
+    <!-- Landing Page Specific Styles -->
+    <style>
+        /* Force display of sections for scrolling */
+        .tab-content {
+            display: block !important;
+            opacity: 1 !important;
+            padding-top: 80px;
+            /* Offset for sticky header */
+            margin-top: -80px;
+            /* Offset for sticky header */
+        }
+
+        /* Sticky Header - Elegant Style */
+        #zone-a {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 22, 37, 0.98);
+            /* Plus opaque pour la lisibilité */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            padding: 15px 0;
+        }
+
+        /* Reset inherited styles for nav buttons to make them cleaner */
+        .navigation .nav-button {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: var(--color-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .navigation .nav-button::before {
+            display: none;
+            /* Remove the gradient hover effect from original CSS */
+        }
+
+        .navigation .nav-button:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Underline effect on hover */
+        .navigation .nav-button::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 5px;
+            left: 50%;
+            background-color: var(--color-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navigation .nav-button:hover::after {
+            width: 70%;
+        }
+
+        /* Primary CTA in Menu */
+        .navigation .nav-button.cta-primary {
+            border: 1px solid var(--color-gold) !important;
+            border-radius: 4px;
+            padding: 10px 25px;
+            background: rgba(197, 160, 89, 0.1) !important;
+        }
+
+        .navigation .nav-button.cta-primary:hover {
+            background: var(--color-gold) !important;
+            color: var(--color-navy) !important;
+            text-shadow: none;
+        }
+
+        /* Section Separators */
+        section {
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            position: relative;
+        }
+
+        /* Hero Adjustments */
+        #hero .main-container {
+            min-height: auto;
+            padding-bottom: 60px;
+            display: flex;
+            /* Flex instead of Grid for better control */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            /* Slightly larger */
+            color: var(--color-gold);
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: #f5f5dc;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Refined Hero Button */
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--color-navy);
+            background: linear-gradient(135deg, #d4af37 0%, #f0d858 50%, #d4af37 100%);
+            background-size: 200% auto;
+            border-radius: 50px;
+            /* Rounded for more elegance */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+
+        .hero-btn:hover {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            color: #000;
+        }
+
+        .hero-visuals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .hero-book-cover {
+            position: relative;
+            transition: transform 0.5s ease;
+            perspective: 1000px;
+        }
+
+        .hero-book-cover:hover {
+            transform: scale(1.02) rotateY(5deg);
+        }
+
+        .hero-book-cover img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 4px;
+            box-shadow:
+                -10px 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(197, 160, 89, 0.5);
+            /* Fine gold border */
+        }
+
+        .hero-features {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .feature-item {
+            margin-bottom: 35px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            margin-right: 20px;
+            color: var(--color-gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .feature-text strong {
+            color: var(--color-gold);
+            font-family: 'Cinzel', serif;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+
+        .feature-text {
+            color: #f5f5dc;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Marquee Section */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(5, 22, 37, 1) 0%, rgba(13, 63, 107, 0.3) 50%, rgba(5, 22, 37, 1) 100%);
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: fit-content;
+            animation: scroll 25s linear infinite;
+        }
+
+        .marquee-item {
+            white-space: nowrap;
+            color: var(--color-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            margin: 0 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        .marquee-item::after {
+            content: '•';
+            margin-left: 30px;
+            opacity: 0.5;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Hide non-essential elements for landing */
+        .hide-on-landing {
+            display: none !important;
+        }
+
+        /* Floating CTA on mobile */
+        .mobile-fab {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background: var(--color-gold);
+            color: var(--color-navy);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+        }
+
+        /* New Hero Grid Layout */
+        .hero-grid-new {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            align-items: stretch;
+        }
+
+        /* Left Card: Mystery */
+        .mystery-card {
+            background: url('images/3M1.png') center/cover no-repeat;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            border: 2px solid var(--color-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .mystery-overlay {
+            background: rgba(5, 22, 37, 0.85);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .mystery-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--color-gold);
+            font-size: 2em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .mystery-card p {
+            font-family: 'Playfair Display', serif;
+            color: #f5f5dc;
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+
+        /* Right Column */
+        .right-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Top Video Card */
+        .video-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-gold);
+            height: 250px;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(5, 22, 37, 0.8);
+            color: #f5f5dc;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        /* Bottom Features */
+        .features-list-new {
+            background: rgba(13, 63, 107, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid-new {
+                grid-template-columns: 1fr;
+            }
+
+            .mystery-card {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body class="landing-page">
+
+    <!-- Zone A - Navigation (Sticky) -->
+    <header id="zone-a">
+        <nav class="navigation">
+            <a href="#hero" class="nav-button">Accueil</a>
+            <a href="#concept" class="nav-button">Le Concept</a>
+            <a href="#offre" class="nav-button cta-primary">🎁 Offres Noël</a>
+            <a href="#presse" class="nav-button">Presse</a>
+            <a href="#faq" class="nav-button">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: HERO (Produit & Promesse) -->
+    <section id="hero" class="tab-content">
+        <div class="main-container">
+
+            <div class="hero-content">
+                <h1 class="hero-title">La Première BD Policière<br>Bilingue & Réversible</h1>
+                <p class="hero-subtitle">
+                    "Voyager sur la Côte d'Azur sur fond d'enquêtes captivantes."
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="#offre" class="hero-btn">
+                        Découvrir les Albums
+                    </a>
+                </div>
+            </div>
+
+            <!-- MARQUEE BASELINE (Moved here) -->
+            <div class="marquee-container"
+                style="margin: 10px 0; background: transparent; border-top: none; border-bottom: none;">
+                <div class="marquee-content">
+                    <div class="marquee-item">Se faire plaisir</div>
+                    <div class="marquee-item">Offrir aux amis</div>
+                    <div class="marquee-item">Enchanter les enfants</div>
+                    <div class="marquee-item">Utile à la famille</div>
+                    <div class="marquee-item">Se faire plaisir</div>
+                    <div class="marquee-item">Offrir aux amis</div>
+                    <div class="marquee-item">Enchanter les enfants</div>
+                    <div class="marquee-item">Utile à la famille</div>
+                    <div class="marquee-item">Se faire plaisir</div>
+                    <div class="marquee-item">Offrir aux amis</div>
+                    <div class="marquee-item">Enchanter les enfants</div>
+                    <div class="marquee-item">Utile à la famille</div>
+                </div>
+            </div>
+
+            <!-- NEW HERO VISUALS GRID -->
+            <div class="hero-grid-new">
+                <!-- Left Card: Mystery Carousel -->
+                <div class="mystery-card" style="padding: 0; background: none; border: none; box-shadow: none;">
+                    <div class="media-block" style="height: 100%; width: 100%;">
+                        <div class="carousel-container" id="carousel-c1"
+                            style="height: 100%; border-radius: 12px; border: 2px solid var(--color-gold); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <!-- Carousel items will be dynamically added -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-grid">
+                    <!-- Top: Video -->
+                    <div class="video-card">
+                        <video autoplay loop muted playsinline>
+                            <source src="M2V5.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-caption">Il est efficace et rapide.</div>
+                    </div>
+
+                    <!-- Bottom: Features -->
+                    <div class="features-list-new">
+                        <div class="feature-item">
+                            <div class="feature-icon">🕵️‍♂️</div>
+                            <div class="feature-text">
+                                <strong>Une Enquête "So British"</strong>
+                                Suivez Andrew Morrow, le détective le plus élégant de la Riviera, dans les coulisses du
+                                Festival de Cannes.
+                            </div>
+                        </div>
+                        <div class="feature-item" style="margin-bottom: 0;">
+                            <div class="feature-icon">🎁</div>
+                            <div class="feature-text">
+                                <strong>Le Cadeau Parfait</strong>
+                                Un bel objet, une histoire prenante et une touche culturelle. Offrez l'originalité pour
+                                Noël.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: CONCEPT (2-Faces) -->
+    <section id="concept" class="tab-content">
+        <div style="padding: 50px 20px;">
+            <div class="flipbook-text"
+                style="width:100%; max-width:1200px; margin:0 auto; text-align:center; background: rgba(13, 63, 107, 0.3); border-radius: 18px; padding: 40px 36px 32px 36px;">
+                <h3
+                    style="color: #d4af37; margin-bottom: 20px; font-size: 2.2em; font-family: 'Cinzel', serif; letter-spacing: 1px;">
+                    Le Concept Unique "2-Faces"</h3>
+                <p style="font-size: 1.35em; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 40px;">
+                    Une bande dessinée révolutionnaire : Bilingue & Réversible</p>
+                <div style="display:flex; justify-content:center; margin-bottom:48px;">
+                    <video
+                        style="max-width: 900px; width: 100%; border-radius: 18px; box-shadow: none; background: rgba(13, 63, 107, 0.3);"
+                        autoplay muted loop playsinline webkit-playsinline>
+                        <source src="mktg_recto-verso_25.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge cette vidéo.
+                    </video>
+                </div>
+                <div
+                    style="background: rgba(13, 63, 107, 0.3); border-radius: 18px; padding: 40px 36px 32px 36px; margin-bottom: 38px; box-shadow: 0 4px 24px rgba(13,63,107,0.10); max-width: 900px; margin-left: auto; margin-right: auto; text-align:left;">
+                    <p
+                        style="font-size: 1.18em; line-height: 2.1; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 18px;">
+                        D'un côté, une enquête policière racontée en images avec du texte en <span
+                            style='color:#d4af37; font-weight:bold;'>français</span>&nbsp;; de l'autre, la même
+                        histoire, mais en <span style='color:#d4af37; font-weight:bold;'>anglais</span>.<br><br>
+                        <span style='color:#d4af37; font-weight:bold;'>Ce qui rend cette BD vraiment spéciale</span>,
+                        c'est que même si le récit est identique, le fait de lire dans une autre langue transforme la
+                        perception de l'histoire. Une expérience à la fois <b>linguistique</b>, <b>visuelle</b> et
+                        <b>narrative</b>.
+                    </p>
+                    <div style="margin-top: 36px;">
+                        <div
+                            style="font-size: 1.18em; line-height: 2.1; color: #f5f5dc; font-family: 'Playfair Display', serif; text-align: left; max-width: 520px; margin: 0 auto;">
+                            <div style="margin-bottom: 18px;">✨ <b>Intrigue policière et culturelle</b></div>
+                            <div style="margin-bottom: 18px;">📚 <b>Idéal pour progresser en langues</b></div>
+                            <div style="margin-bottom: 18px;">🎁 <b>Le cadeau original par excellence</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PRESSE & AVIS -->
+    <section id="presse" class="tab-content">
+        <div style="padding: 60px 20px;">
+            <h2
+                style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">
+                ILS EN PARLENT</h2>
+
+            <!-- TV Presse Grid -->
+            <div
+                style="max-width: 1100px; margin: 0 auto 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                <!-- TV Monaco -->
+                <a href="https://videos.tvmonaco.com/content/lactu-journal-du-23092025" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    <div
+                        style="background: rgba(13, 63, 107, 0.3); border: 2px solid #d4af37; border-radius: 12px; overflow: hidden;">
+                        <div
+                            style="aspect-ratio: 16/9; background:#0b2f50 url('images/tv_monaco.jpg') center/cover no-repeat;">
+                        </div>
+                        <div style="padding: 16px;">
+                            <div style="font-family: 'Cinzel', serif; color:#d4af37; margin-bottom:8px;">TV Monaco</div>
+                            <div style="font-family: 'Playfair Display', serif; font-size: 0.95em; color:#f5f5dc;">
+                                « Journal du 23/09/2025 »
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- Info Monaco -->
+                <a href="https://www.youtube.com/watch?v=Juje2xTPwjU" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    <div
+                        style="background: rgba(13, 63, 107, 0.3); border: 2px solid #d4af37; border-radius: 12px; overflow: hidden;">
+                        <div
+                            style="aspect-ratio: 16/9; background:#0b2f50 url('images/info_monaco.jpg') center/cover no-repeat;">
+                        </div>
+                        <div style="padding: 16px;">
+                            <div style="font-family: 'Cinzel', serif; color:#d4af37; margin-bottom:8px;">Info Monaco
+                            </div>
+                            <div style="font-family: 'Playfair Display', serif; font-size: 0.95em; color:#f5f5dc;">
+                                « Journal du 02/09/2025 »
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- MARQUEE BASELINE -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- Duplicated content for seamless scroll -->
+            <div class="marquee-item">Se faire plaisir</div>
+            <div class="marquee-item">Offrir aux amis</div>
+            <div class="marquee-item">Enchanter les enfants</div>
+            <div class="marquee-item">Utile à la famille</div>
+            <div class="marquee-item">Se faire plaisir</div>
+            <div class="marquee-item">Offrir aux amis</div>
+            <div class="marquee-item">Enchanter les enfants</div>
+            <div class="marquee-item">Utile à la famille</div>
+            <div class="marquee-item">Se faire plaisir</div>
+            <div class="marquee-item">Offrir aux amis</div>
+            <div class="marquee-item">Enchanter les enfants</div>
+            <div class="marquee-item">Utile à la famille</div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: OFFRE (Achat) -->
+    <section id="offre" class="tab-content">
+        <div style="padding: 80px 20px; text-align: center;">
+            <h2
+                style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 50px; text-align: center;">
+                CHOISISSEZ VOTRE ÉDITION</h2>
+
+            <!-- Pack Spécial Noël -->
+            <article class="product-card"
+                style="background: rgba(13, 63, 107, 0.3); padding: 0; border-radius: 12px; border: 2px solid #d4af37; display: grid; grid-template-columns: 1.5fr 0.8fr 1.5fr; gap: 0; align-items: stretch; margin: 0 auto 40px auto; max-width: 1400px; position: relative;">
+
+                <!-- Video Left -->
+                <div
+                    style="position: relative; overflow: hidden; background: #000; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+                    <video autoplay loop muted playsinline
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <source src="videos/pack_woman.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- Center Content -->
+                <div
+                    style="padding: 30px 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(5, 22, 37, 0.6); position: relative; z-index: 10;">
+                    <h3
+                        style="color: #d4af37; margin-bottom: 10px; font-size: 1.6em; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 2px;">
+                        Pack Spécial Noël
+                    </h3>
+                    <p
+                        style="color: #f5f5dc; margin-bottom: 15px; font-size: 1.1em; font-family: 'Playfair Display', serif; font-style: italic;">
+                        Les 2 BD + Enveloppe Collector
+                    </p>
+                    <p
+                        style="font-size: 2.8em; color: #d4af37; margin: 5px 0; font-weight: bold; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);">
+                        30€
+                    </p>
+                    <p style="font-size: 0.9em; color: #f5f5dc; margin-bottom: 25px; opacity: 0.8;">
+                        + Frais de port : 5€
+                    </p>
+                    <a class="pay-btn" href="#"
+                        onclick="plausible('Commander Pack Noel'); return notifyAndGo('Pack Spécial Noël', '30€', 'https://buy.stripe.com/eVq00i8j82WG4qY9n6dUY04')"
+                        target="_blank"
+                        style="display:inline-block; background: linear-gradient(135deg, #d4af37, #f0d858); color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transition: transform 0.3s ease;">
+                        COMMANDER LE PACK
+                    </a>
+                </div>
+
+                <!-- Video Right -->
+                <div
+                    style="position: relative; overflow: hidden; background: #000; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+                    <video autoplay loop muted playsinline
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <source src="videos/pack_cadeau.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
+
+            <div class="achat-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
+
+                <!-- Carte Édition Papier -->
+                <article class="product-card"
+                    style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="images/recto_0_cannes.png" alt="Couverture BD"
+                        style="width: 150px; border-radius: 8px; border: 2px solid #d4af37; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+
+                    <h3 style="color: #d4af37; margin-bottom: 10px; font-size: 1.3em; font-family: 'Cinzel', serif;">
+                        OÙ EST CACHÉE LA PALME D'OR ?</h3>
+                    <p style="font-size: 2em; color: #d4af37; margin: 10px 0; font-weight: bold;">14€</p>
+                    <a class="pay-btn" href="#"
+                        onclick="plausible('Commander 14€'); return notifyAndGo('Où est cachée la Palme d\'Or ?', '14€', 'https://buy.stripe.com/3cIeVcdDsgNw3mU56QdUY02')"
+                        target="_blank"
+                        style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1em; font-family: 'Cinzel', serif; text-decoration: none;">
+                        Commander l'unité
+                    </a>
+                </article>
+
+                <!-- Carte Édition Monaco -->
+                <article class="product-card"
+                    style="background: rgba(13, 63, 107, 0.3); padding: 30px; border-radius: 12px; border: 2px solid #d4af37; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="images/recto_0_monaco.png" alt="Couverture BD"
+                        style="width: 150px; border-radius: 8px; border: 2px solid #d4af37; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+
+                    <h3 style="color: #d4af37; margin-bottom: 10px; font-size: 1.3em; font-family: 'Cinzel', serif;">
+                        COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
+                    <p style="font-size: 2em; color: #d4af37; margin: 10px 0; font-weight: bold;">18€</p>
+                    <a class="pay-btn" href="#"
+                        onclick="plausible('Commander 18€'); return notifyAndGo('Course contre la montre à Monte-Carlo !', '18€', 'https://buy.stripe.com/9B600iczodBk5v256QdUY03')"
+                        target="_blank"
+                        style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1em; font-family: 'Cinzel', serif; text-decoration: none;">
+                        Commander l'unité
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: AVIS LECTEURS -->
+    <section id="avis" class="tab-content">
+        <div style="padding: 60px 20px;">
+            <!-- Testimonials -->
+            <div class="achat-testimonials">
+                <h3>Ce qu'en pensent nos lecteurs</h3>
+                <div class="achat-testimonial-carousel" id="achat-testimonial-carousel">
+                    <!-- Testimonial items will be dynamically added -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FAQ & CONTACT -->
+    <section id="faq" class="tab-content">
+        <div style="padding: 60px 20px;">
+            <h2
+                style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 30px; text-align: center;">
+                QUESTIONS FRÉQUENTES</h2>
+
+            <div class="faq-container">
+                <div class="faq-category">
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Quels sont les modes de paiement ?</div>
+                        <div class="faq-answer">Paiement sécurisé par Carte Bancaire via Stripe ou PayPal.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">🔵 Combien de temps pour la livraison ?</div>
+                        <div class="faq-answer">📦 2 à 5 jours ouvrés en France Métropolitaine.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">🔴 Satisfait ou remboursé ?</div>
+                        <div class="faq-answer">Oui, vous avez 14 jours pour changer d'avis.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p>Une autre question ? <a href="mailto:nat.bissey@andrewmorrowdetective.com"
+                        style="color: #d4af37;">Contactez-nous</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: L'AUTEUR -->
+    <section id="auteur" class="tab-content">
+        <div style="padding: 60px 20px; background: var(--color-navy);">
+            <h2
+                style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2.5em; margin-bottom: 40px; text-align: center;">
+                L'AUTEUR
+            </h2>
+
+            <div
+                style="max-width: 900px; margin: 0 auto; background: rgba(13, 63, 107, 0.3); border-radius: 12px; border: 1px solid rgba(197, 160, 89, 0.3); padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h3 style="color: #d4af37; font-family: 'Cinzel', serif; font-size: 1.8em; margin-bottom: 25px;">
+                    Nat Bissey
+                </h3>
+
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 1.15em; color: #f5f5dc; line-height: 1.8; margin-bottom: 30px;">
+                    <p style="margin-bottom: 20px;">
+                        Auteure passionnée de mystères et d'intrigues, Nat est tombée sous le charme de la Côte d'Azur
+                        au point d'en faire le théâtre de ses enquêtes les plus captivantes.
+                    </p>
+                    <p>
+                        Elle continue d’approfondir son sens du récit à travers un parcours universitaire en “Scénario
+                        et Narration”.
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(197, 160, 89, 0.3); padding-top: 30px;">
+                    <h4 style="color: #d4af37; font-family: 'Cinzel', serif; font-size: 1.2em; margin-bottom: 20px;">
+                        Récompenses :
+                    </h4>
+                    <ul
+                        style="list-style: none; padding: 0; color: #f5f5dc; font-family: 'Playfair Display', serif; font-size: 1.1em; line-height: 1.8;">
+                        <li style="margin-bottom: 10px;">
+                            🏆 Premier prix du jury – Concours "Écrire Cannes" 2024
+                        </li>
+                        <li>
+                            🥇 Premier Prix du Jury concours "Dis-moi dix mots" – Biot (Juin 2025)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="zone-f">
+        <div class="footer-content" style="text-align: center; display: block;">
+            <p>&copy; 2025 NATEY Éditions - Tous droits réservés</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                <a href="index.html" style="color: #888;">Retour au site principal</a> |
+                <a href="#" style="color: #888;">Mentions Légales</a> |
+                <a href="#" style="color: #888;">CGV</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Floating CTA -->
+    <a href="#offre" class="mobile-fab">🎁 J'ACHÈTE</a>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // Smooth Scrolling for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize Carousels (Same data as index.html)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize testimonial carousels
+            new AchatTestimonialCarousel('achat-testimonial-carousel', achatTestimonials);
+
+            // Initialize carousels
+            new Carousel('carousel-c1', c1Items, false);
+            new Carousel('carousel-c2', c2Items, true);
+        });
+
+        // Data Objects (Copied from index.html)
+        const achatTestimonials = [
+            { quote: "Maintenant je regarde les murs autrement.", author: "Brigitte", profession: "mamie Cannoise", age: 76, location: "Cannes" },
+            { quote: "Wallah c'est du cinéma en papier.", author: "Samir", profession: "livreur Uber Eats", age: 30, location: "Vitrolles" },
+            { quote: "Un souvenir qu'on découvre aussi à l'envers.", author: "Aiko", profession: "étudiante en art", age: 24, location: "Kyoto / Marseille" },
+            { quote: "Une vraie pépite cette BD. Super idée le format double face.", author: "Michael", profession: "Directeur commercial", age: 35, location: "Paris" }
+        ];
+
+        const c1Items = [
+            { type: 'image', url: 'images/1M1.png', comment: 'La Côte d\'Azur fascine, mais elle ne supporte pas la lumière' },
+            { type: 'image', url: 'images/2M1.png', comment: 'Des testaments verrouillés, des successions contestées' },
+            { type: 'image', url: 'images/3M1.png', comment: 'Les scandales sont recouverts de silence doré' },
+            { type: 'image', url: 'images/4M1.png', comment: 'Certains noms ont leurs secrets et des moyens pour les garder' },
+            { type: 'image', url: 'images/andrew et son tel.png', comment: 'Andrew Morrow voit ce que personne ne regarde' }
+        ];
+
+        const c2Items = [
+            { type: 'video', url: '', comment: 'Il parle peu. Il voit tout.' },
+            { type: 'video', url: 'M2V2.mp4', comment: 'Il intervient quand la police ne peut pas.' },
+            { type: 'video', url: 'M2V3.mp4', comment: 'Rien n\'est certain. Mais tout le monde sait qu\'il n\'échoue jamais.' },
+            { type: 'video', url: 'M2V4.mp4', comment: 'Il ne cherche pas la vérité. Il cherche ce que vous n\'osez pas dire.' },
+            { type: 'video', url: 'M2V5.mp4', comment: 'Il est efficace et rapide.' }
+        ];
+
+        // Classes
+        class AchatTestimonialCarousel {
+            constructor(containerId, testimonials) {
+                this.container = document.getElementById(containerId);
+                this.testimonials = testimonials;
+                this.currentIndex = 0;
+                this.init();
+            }
+            init() {
+                this.createTestimonialItems();
+                this.startAutoPlay();
+            }
+            createTestimonialItems() {
+                this.container.innerHTML = '';
+                this.testimonials.forEach((testimonial, index) => {
+                    const testimonialItem = document.createElement('div');
+                    testimonialItem.className = 'achat-testimonial-item';
+                    if (index === 0) testimonialItem.classList.add('active');
+                    testimonialItem.innerHTML = `
+                        <div class="achat-testimonial-quote">${testimonial.quote}</div>
+                        <div class="achat-testimonial-author">${testimonial.author}, <span class="profession">${testimonial.profession}, ${testimonial.age} ans</span></div>
+                    `;
+                    this.container.appendChild(testimonialItem);
+                });
+            }
+            nextSlide() {
+                const currentItem = this.container.children[this.currentIndex];
+                currentItem.classList.remove('active');
+                this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                const nextItem = this.container.children[this.currentIndex];
+                nextItem.classList.add('active');
+            }
+            startAutoPlay() { setInterval(() => { this.nextSlide(); }, 4000); }
+        }
+
+        class Carousel {
+            constructor(containerId, items, hasComments = false) {
+                this.container = document.getElementById(containerId);
+                this.items = items;
+                this.hasComments = hasComments;
+                this.currentIndex = 0;
+                this.init();
+            }
+            init() { this.createCarouselItems(); this.startAutoPlay(); }
+            createCarouselItems() {
+                this.container.innerHTML = '';
+                this.items.forEach((item, index) => {
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = 'carousel-item';
+                    if (index === 0) carouselItem.classList.add('active');
+                    if (item.type === 'video') {
+                        const video = document.createElement('video');
+                        video.autoplay = true; video.muted = true; video.loop = true; video.playsInline = true;
+                        if (item.url) {
+                            const source = document.createElement('source');
+                            source.src = item.url; source.type = 'video/mp4';
+                            video.appendChild(source);
+                            carouselItem.appendChild(video);
+                        }
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = item.url;
+                        carouselItem.appendChild(img);
+                    }
+                    if (this.hasComments && item.comment) {
+                        const commentZone = document.createElement('div');
+                        commentZone.className = 'comment-zone';
+                        commentZone.innerHTML = `<p>${item.comment}</p>`;
+                        carouselItem.appendChild(commentZone);
+                    }
+                    this.container.appendChild(carouselItem);
+                });
+            }
+            nextSlide() {
+                const currentItem = this.container.children[this.currentIndex];
+                currentItem.classList.remove('active');
+                this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                const nextItem = this.container.children[this.currentIndex];
+                nextItem.classList.add('active');
+            }
+            startAutoPlay() { setInterval(() => { this.nextSlide(); }, 2000); }
+        }
+
+        function notifyAndGo(productName, priceLabel, stripeUrl) {
+            // Simplified for landing
+            window.open(stripeUrl, '_blank');
+            return false;
+        }
+    </script>
+</body>
+
+</html>
