@@ -105,7 +105,10 @@ Tu sais tout sur le produit grâce à ce dossier :
 RÈGLES SPÉCIFIQUES :
 - N'utilise JAMAIS le terme "2-Faces" pour nommer le livre. Dis simplement "la bande dessinée", "l'album" ou "les enquêtes".
 - Si on te demande de contacter l'auteure (email, écrire), réponds : "Nat Bissey lit tout son courrier. Vous pouvez lui écrire directement. [ACTION:EMAIL_CONTACT]"
-- Si on te pose une question sur : Livraison Express (24h), Paiement PayPal, Livraison Étranger, Point Relais, Envoi à plusieurs adresses, Papier Cadeau, Dédicace en Anglais, ou Autre moyen de paiement (sauf chèque), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE]"
+- Si on te pose une question sur la Livraison (Express, Étranger, Point Relais, plusieurs adresses), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE:LIVRAISON]"
+- Si on te pose une question sur le Paiement (PayPal, Virement, Autre), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE:PAYPAL]"
+- Si on te pose une question sur le Papier Cadeau, réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE:CADEAU]"
+- Si on te pose une question sur une Dédicace en Anglais, réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE:DEDICACE]"
 - Si on te demande si on peut l'acheter ailleurs (librairie, boutique), réponds : "Sur Cannes oui, en librairie non. Pour Cannes, écrivez à l'auteure. [ACTION:EMAIL_CANNES]"
 - Si on te demande qui a décerné le "Prix du meilleur cadeau 2025", réponds : "C'est une distinction décernée par Natey Editions pour récompenser l'originalité du concept."
 - Si le visiteur veut poser une question spécifique à l'auteure (non prévue ici) ou si tu ne connais pas la réponse, réponds : "C'est une question pour Nat Bissey. Je vous invite à la lui poser directement. [ACTION:EMAIL_QUESTION]"
@@ -247,9 +250,18 @@ RÈGLES SPÉCIFIQUES :
         if (text.includes('[ACTION:EMAIL_CONTACT]')) {
             cleanText = text.replace('[ACTION:EMAIL_CONTACT]', '');
             actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Message%20confidentiel%20(via%20Andrew%20Morrow)&body=Ch%C3%A8re%20Nat%2C%0A%0AAndrew%20m%27a%20conseill%C3%A9%20de%20vous%20%C3%A9crire...";
-        } else if (text.includes('[ACTION:EMAIL_DEMANDE]')) {
-            cleanText = text.replace('[ACTION:EMAIL_DEMANDE]', '');
-            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Demande%20Sp%C3%A9ciale%20(via%20Andrew%20Morrow)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20faire%20une%20demande%20sp%C3%A9ciale...";
+        } else if (text.includes('[ACTION:EMAIL_DEMANDE:LIVRAISON]')) {
+            cleanText = text.replace('[ACTION:EMAIL_DEMANDE:LIVRAISON]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Demande%20Livraison%20Sp%C3%A9ciale&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20une%20livraison%20sp%C3%A9ciale%20(Express%2C%20Relais%2C%20Etranger)...";
+        } else if (text.includes('[ACTION:EMAIL_DEMANDE:PAYPAL]')) {
+            cleanText = text.replace('[ACTION:EMAIL_DEMANDE:PAYPAL]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Paiement%20PayPal&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20r%C3%A9gler%20ma%20commande%20par%20PayPal...";
+        } else if (text.includes('[ACTION:EMAIL_DEMANDE:CADEAU]')) {
+            cleanText = text.replace('[ACTION:EMAIL_DEMANDE:CADEAU]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Option%20Papier%20Cadeau&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20l%27option%20Papier%20Cadeau%20pour%20ma%20commande...";
+        } else if (text.includes('[ACTION:EMAIL_DEMANDE:DEDICACE]')) {
+            cleanText = text.replace('[ACTION:EMAIL_DEMANDE:DEDICACE]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=D%C3%A9dicace%20en%20Anglais&body=Bonjour%20Nat%2C%0A%0AVoici%20le%20texte%20que%20je%20souhaite%20pour%20la%20d%C3%A9dicace%20en%20anglais%20%3A...";
         } else if (text.includes('[ACTION:EMAIL_CANNES]')) {
             cleanText = text.replace('[ACTION:EMAIL_CANNES]', '');
             actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Achat%20Cannes&body=Bonjour%20Nat%2C%20je%20suis%20sur%20Cannes...";
