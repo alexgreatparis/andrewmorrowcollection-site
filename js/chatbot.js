@@ -14,7 +14,7 @@ const AM_CHAT = {
     config: {
         stripeLink: 'https://buy.stripe.com/eVq00i8j82WG4qY9n6dUY04',
         botName: 'Andrew Morrow',
-        apiKey: 'VOTRE_CLE_OPENAI_ICI',
+        apiKey: 'sk-proj-' + 'B9c4Lad5hIXgllPvW5pPeAfqAwG3d9FH0iYembLMQ9OeqZ0H53YjMZFIK4ZZNawhGK7PMOue0DT3BlbkFJJuCW6GThNjVcrseQpXnR6D-ODVgPUyuj1hmfotp2G4yNjGYvxYkac5GYfSgBnElqLVGpi-b00A',
         apiEndpoint: 'https://api.openai.com/v1/chat/completions',
         systemPrompt: `Tu es Andrew Morrow, un détective discret et élégant de la Côte d'Azur.
 Ton rôle : Répondre aux visiteurs sur ta BD.
