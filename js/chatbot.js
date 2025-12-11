@@ -8,7 +8,8 @@ const AM_CHAT = {
         isOpen: false,
         step: 'init', // init, offer, waiting_name, chat
         userName: '',
-        history: []
+        history: [],
+        sessionId: 'sess_' + Math.random().toString(36).substr(2, 9)
     },
 
     config: {
@@ -16,6 +17,7 @@ const AM_CHAT = {
         botName: 'Andrew Morrow',
         apiKey: 'sk-proj-' + 'B9c4Lad5hIXgllPvW5pPeAfqAwG3d9FH0iYembLMQ9OeqZ0H53YjMZFIK4ZZNawhGK7PMOue0DT3BlbkFJJuCW6GThNjVcrseQpXnR6D-ODVgPUyuj1hmfotp2G4yNjGYvxYkac5GYfSgBnElqLVGpi-b00A',
         apiEndpoint: 'https://api.openai.com/v1/chat/completions',
+        loggingEndpoint: 'https://script.google.com/macros/s/AKfycbx-Uv0Pr1lZI8-nS3BWoMmTn3oChzgSeHgbXbFshsHJO91IYybrRFezwSj5cjeSwGPZ/exec',
         systemPrompt: `Tu es Andrew Morrow, un détective discret et élégant de la Côte d'Azur.
 Ton rôle : Répondre aux visiteurs sur ta BD.
 Ton style : Bref (max 2 phrases), calme, mystérieux, mais courtois.
@@ -102,6 +104,11 @@ Tu sais tout sur le produit grâce à ce dossier :
 
 RÈGLES SPÉCIFIQUES :
 - N'utilise JAMAIS le terme "2-Faces" pour nommer le livre. Dis simplement "la bande dessinée", "l'album" ou "les enquêtes".
+- Si on te demande de contacter l'auteure (email, écrire), réponds : "Nat Bissey lit tout son courrier, même si elle est souvent en filature. Vous pouvez lui écrire directement ici : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Message%20confidentiel%20(via%20Andrew%20Morrow)&body=Ch%C3%A8re%20Nat%2C%0A%0AAndrew%20m%27a%20conseill%C3%A9%20de%20vous%20%C3%A9crire...'>nat.bissey@andrewmorrowdetective.com</a>"
+- Si on te pose une question sur : Livraison Express (24h), Paiement PayPal, Livraison Étranger, Point Relais, Envoi à plusieurs adresses, Papier Cadeau, Dédicace en Anglais, ou Autre moyen de paiement (sauf chèque), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Demande%20Sp%C3%A9ciale%20(via%20Andrew%20Morrow)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20faire%20une%20demande%20sp%C3%A9ciale...'>Envoyer une demande</a>"
+- Si on te demande si on peut l'acheter ailleurs (librairie, boutique), réponds : "Sur Cannes oui, en librairie non. Pour Cannes, écrivez à l'auteure : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Achat%20Cannes&body=Bonjour%20Nat%2C%20je%20suis%20sur%20Cannes...'>Contacter pour Cannes</a>"
+- Si on te demande qui a décerné le "Prix du meilleur cadeau 2025", réponds : "C'est une distinction décernée par Natey Editions pour récompenser l'originalité du concept."
+- Si le visiteur veut poser une question spécifique à l'auteure (non prévue ici) ou si tu ne connais pas la réponse, réponds : "C'est une question pour Nat Bissey. Je vous invite à la lui poser directement : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Question%20pour%20Nat%20(via%20Andrew)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20vous%20demander...'>Poser votre question par mail</a>"
 - Si on te demande qui est l'auteur, parle de Nat Bissey avec admiration (mentionne ses prix et ses études de scénariste).
 - Si on te demande si tu as lu la BD, réponds : "Oui je connais les enquêtes mais je n'ai pas le droit de les dévoiler."
 - Si on parle de traduction ou de fautes, réponds : "La traduction a été faite par un professionnel et elle a su préserver les touches d'humour. C'est un outil pédagogique pour les petits comme pour les grands."
@@ -235,6 +242,32 @@ RÈGLES SPÉCIFIQUES :
         msgDiv.innerHTML = text; // Allow HTML for links
         container.appendChild(msgDiv);
         container.scrollTop = container.scrollHeight;
+
+        // Add to history
+        this.state.history.push({ sender, text, time: new Date().toISOString() });
+
+        // Save log in background
+        this.saveLog();
+    },
+
+    saveLog: function () {
+        if (!this.config.loggingEndpoint) return;
+
+        // Format conversation for readability
+        const conversationText = this.state.history.map(m => `[${m.sender.toUpperCase()}] ${m.text}`).join('\n');
+
+        // Use simple text payload to avoid CORS preflight issues with Google Script
+        fetch(this.config.loggingEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+            body: JSON.stringify({
+                id: this.state.sessionId,
+                history: conversationText
+            })
+        }).catch(err => console.error('Log error:', err));
     },
 
     showTyping: function (show) {
