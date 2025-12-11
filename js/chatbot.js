@@ -104,11 +104,11 @@ Tu sais tout sur le produit grâce à ce dossier :
 
 RÈGLES SPÉCIFIQUES :
 - N'utilise JAMAIS le terme "2-Faces" pour nommer le livre. Dis simplement "la bande dessinée", "l'album" ou "les enquêtes".
-- Si on te demande de contacter l'auteure (email, écrire), réponds : "Nat Bissey lit tout son courrier, même si elle est souvent en filature. Vous pouvez lui écrire directement ici : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Message%20confidentiel%20(via%20Andrew%20Morrow)&body=Ch%C3%A8re%20Nat%2C%0A%0AAndrew%20m%27a%20conseill%C3%A9%20de%20vous%20%C3%A9crire...'>nat.bissey@andrewmorrowdetective.com</a>"
-- Si on te pose une question sur : Livraison Express (24h), Paiement PayPal, Livraison Étranger, Point Relais, Envoi à plusieurs adresses, Papier Cadeau, Dédicace en Anglais, ou Autre moyen de paiement (sauf chèque), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Demande%20Sp%C3%A9ciale%20(via%20Andrew%20Morrow)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20faire%20une%20demande%20sp%C3%A9ciale...'>Envoyer une demande</a>"
-- Si on te demande si on peut l'acheter ailleurs (librairie, boutique), réponds : "Sur Cannes oui, en librairie non. Pour Cannes, écrivez à l'auteure : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Achat%20Cannes&body=Bonjour%20Nat%2C%20je%20suis%20sur%20Cannes...'>Contacter pour Cannes</a>"
+- Si on te demande de contacter l'auteure (email, écrire), réponds : "Nat Bissey lit tout son courrier. Vous pouvez lui écrire directement. [ACTION:EMAIL_CONTACT]"
+- Si on te pose une question sur : Livraison Express (24h), Paiement PayPal, Livraison Étranger, Point Relais, Envoi à plusieurs adresses, Papier Cadeau, Dédicace en Anglais, ou Autre moyen de paiement (sauf chèque), réponds : "Oui, c'est possible en envoyant une demande par mail à l'auteure. [ACTION:EMAIL_DEMANDE]"
+- Si on te demande si on peut l'acheter ailleurs (librairie, boutique), réponds : "Sur Cannes oui, en librairie non. Pour Cannes, écrivez à l'auteure. [ACTION:EMAIL_CANNES]"
 - Si on te demande qui a décerné le "Prix du meilleur cadeau 2025", réponds : "C'est une distinction décernée par Natey Editions pour récompenser l'originalité du concept."
-- Si le visiteur veut poser une question spécifique à l'auteure (non prévue ici) ou si tu ne connais pas la réponse, réponds : "C'est une question pour Nat Bissey. Je vous invite à la lui poser directement : <a href='mailto:nat.bissey@andrewmorrowdetective.com?subject=Question%20pour%20Nat%20(via%20Andrew)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20vous%20demander...'>Poser votre question par mail</a>"
+- Si le visiteur veut poser une question spécifique à l'auteure (non prévue ici) ou si tu ne connais pas la réponse, réponds : "C'est une question pour Nat Bissey. Je vous invite à la lui poser directement. [ACTION:EMAIL_QUESTION]"
 - Si on te demande qui est l'auteur, parle de Nat Bissey avec admiration (mentionne ses prix et ses études de scénariste).
 - Si on te demande si tu as lu la BD, réponds : "Oui je connais les enquêtes mais je n'ai pas le droit de les dévoiler."
 - Si on parle de traduction ou de fautes, réponds : "La traduction a été faite par un professionnel et elle a su préserver les touches d'humour. C'est un outil pédagogique pour les petits comme pour les grands."
@@ -239,7 +239,46 @@ RÈGLES SPÉCIFIQUES :
         const container = document.getElementById('am-chat-messages');
         const msgDiv = document.createElement('div');
         msgDiv.className = `am-message ${sender}`;
-        msgDiv.innerHTML = text; // Allow HTML for links
+
+        // Check for Action Tags
+        let actionLink = null;
+        let cleanText = text;
+
+        if (text.includes('[ACTION:EMAIL_CONTACT]')) {
+            cleanText = text.replace('[ACTION:EMAIL_CONTACT]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Message%20confidentiel%20(via%20Andrew%20Morrow)&body=Ch%C3%A8re%20Nat%2C%0A%0AAndrew%20m%27a%20conseill%C3%A9%20de%20vous%20%C3%A9crire...";
+        } else if (text.includes('[ACTION:EMAIL_DEMANDE]')) {
+            cleanText = text.replace('[ACTION:EMAIL_DEMANDE]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Demande%20Sp%C3%A9ciale%20(via%20Andrew%20Morrow)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20faire%20une%20demande%20sp%C3%A9ciale...";
+        } else if (text.includes('[ACTION:EMAIL_CANNES]')) {
+            cleanText = text.replace('[ACTION:EMAIL_CANNES]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Achat%20Cannes&body=Bonjour%20Nat%2C%20je%20suis%20sur%20Cannes...";
+        } else if (text.includes('[ACTION:EMAIL_QUESTION]')) {
+            cleanText = text.replace('[ACTION:EMAIL_QUESTION]', '');
+            actionLink = "mailto:nat.bissey@andrewmorrowdetective.com?subject=Question%20pour%20Nat%20(via%20Andrew)&body=Bonjour%20Nat%2C%0A%0AJe%20souhaite%20vous%20demander...";
+        }
+
+        msgDiv.innerHTML = cleanText; // Allow HTML for links
+
+        // Append Action Button if needed
+        if (actionLink && sender === 'bot') {
+            const btn = document.createElement('a');
+            btn.href = actionLink;
+            btn.className = 'am-action-btn';
+            btn.innerText = "✉️ Envoyer un email";
+            btn.style.display = "inline-block";
+            btn.style.marginTop = "10px";
+            btn.style.padding = "8px 12px";
+            btn.style.backgroundColor = "#C5A059";
+            btn.style.color = "#0A1A2F";
+            btn.style.textDecoration = "none";
+            btn.style.borderRadius = "4px";
+            btn.style.fontWeight = "bold";
+            btn.style.fontSize = "0.9em";
+            msgDiv.appendChild(document.createElement('br'));
+            msgDiv.appendChild(btn);
+        }
+
         container.appendChild(msgDiv);
         container.scrollTop = container.scrollHeight;
 
