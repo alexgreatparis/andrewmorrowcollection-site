@@ -253,8 +253,14 @@ RÈGLES SPÉCIFIQUES :
     saveLog: function () {
         if (!this.config.loggingEndpoint) return;
 
+        // Capture Source & Campaign from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('utm_source') || 'Direct';
+        const campaign = urlParams.get('utm_campaign') || '';
+        const sourceInfo = campaign ? `[SOURCE: ${source} | CAMPAIGN: ${campaign}]` : `[SOURCE: ${source}]`;
+
         // Format conversation for readability
-        const conversationText = this.state.history.map(m => `[${m.sender.toUpperCase()}] ${m.text}`).join('\n');
+        const conversationText = sourceInfo + '\n' + this.state.history.map(m => `[${m.sender.toUpperCase()}] ${m.text}`).join('\n');
 
         // Use simple text payload to avoid CORS preflight issues with Google Script
         fetch(this.config.loggingEndpoint, {
