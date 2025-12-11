@@ -262,21 +262,30 @@ RÈGLES SPÉCIFIQUES :
 
         // Append Action Button if needed
         if (actionLink && sender === 'bot') {
+            const btnContainer = document.createElement('div'); // Wrap in container
+            btnContainer.style.marginTop = "15px";
+
             const btn = document.createElement('a');
             btn.href = actionLink;
+            btn.target = "_blank"; // Force new tab/window behavior
             btn.className = 'am-action-btn';
             btn.innerText = "✉️ Envoyer un email";
+
+            // Inline styles for robustness
             btn.style.display = "inline-block";
-            btn.style.marginTop = "10px";
-            btn.style.padding = "8px 12px";
+            btn.style.padding = "10px 15px";
             btn.style.backgroundColor = "#C5A059";
-            btn.style.color = "#0A1A2F";
+            btn.style.color = "#051625";
             btn.style.textDecoration = "none";
             btn.style.borderRadius = "4px";
             btn.style.fontWeight = "bold";
-            btn.style.fontSize = "0.9em";
-            msgDiv.appendChild(document.createElement('br'));
-            msgDiv.appendChild(btn);
+            btn.style.fontSize = "14px";
+            btn.style.cursor = "pointer";
+            btn.style.border = "1px solid #d4af37";
+            btn.style.boxShadow = "0 2px 5px rgba(0,0,0,0.2)";
+
+            btnContainer.appendChild(btn);
+            msgDiv.appendChild(btnContainer);
         }
 
         container.appendChild(msgDiv);
