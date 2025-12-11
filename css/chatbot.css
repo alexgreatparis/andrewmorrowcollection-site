@@ -1,0 +1,402 @@
+/* Chatbot Andrew Morrow - Style "Riviera Mystery" */
+
+:root {
+    --am-gold: #d4af37;
+    --am-navy: #051625;
+    --am-navy-light: #0d3f6b;
+    --am-cream: #f5f5dc;
+    --am-font-title: 'Cinzel', serif;
+    --am-font-body: 'Playfair Display', serif;
+}
+
+/* 1. Floating Icon (Le Monocle / Badge) */
+#am-chatbot-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--am-navy);
+    border: 2px solid var(--am-gold);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#am-chatbot-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+#am-chatbot-trigger img {
+    width: 70%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Notification Badge */
+.am-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #c0392b;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid white;
+    animation: pulse 2s infinite;
+}
+
+/* Surprise Tooltip (New) */
+#am-surprise-tooltip {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--am-gold);
+    color: var(--am-navy);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: var(--am-font-title);
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+    opacity: 0;
+    transform: translateY(10px);
+    /* Animation immédiate : Apparition + Flottement */
+    animation: fadeInUp 0.5s ease forwards 0.5s, float 2s ease-in-out infinite 1s;
+    pointer-events: none;
+    /* Let clicks pass through */
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* La Flèche qui pointe vers le bas */
+#am-surprise-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 35px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--am-gold);
+}
+
+/* 2. Chat Window */
+#am-chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background: rgba(5, 22, 37, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--am-gold);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    font-family: var(--am-font-body);
+}
+
+#am-chat-window.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Header */
+.am-chat-header {
+    padding: 15px;
+    background: linear-gradient(90deg, var(--am-navy) 0%, var(--am-navy-light) 100%);
+    border-bottom: 1px solid var(--am-gold);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.am-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.am-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--am-gold);
+    background-size: cover;
+    background-position: center;
+    /* Placeholder image, will be set in JS or HTML */
+    background-image: url('../images/3M1.png');
+}
+
+.am-info h4 {
+    margin: 0;
+    color: var(--am-gold);
+    font-family: var(--am-font-title);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.am-info span {
+    font-size: 11px;
+    color: var(--am-cream);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.am-close {
+    background: none;
+    border: none;
+    color: var(--am-gold);
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.am-close:hover {
+    opacity: 1;
+}
+
+/* Messages Area */
+#am-chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--am-gold) var(--am-navy);
+}
+
+/* Message Bubbles */
+.am-message {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.am-message.bot {
+    align-self: flex-start;
+    background: rgba(13, 63, 107, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--am-cream);
+    border-bottom-left-radius: 2px;
+}
+
+.am-message.user {
+    align-self: flex-end;
+    background: var(--am-gold);
+    color: var(--am-navy);
+    border-bottom-right-radius: 2px;
+    font-weight: 500;
+}
+
+/* Typing Indicator */
+.am-typing {
+    align-self: flex-start;
+    padding: 10px 15px;
+    background: rgba(13, 63, 107, 0.2);
+    border-radius: 12px;
+    display: none;
+    /* Hidden by default */
+}
+
+.am-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.am-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--am-gold);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+    opacity: 0.6;
+}
+
+.am-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.am-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+/* Input Area */
+.am-chat-input-area {
+    padding: 15px;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    display: flex;
+    gap: 10px;
+    background: rgba(5, 22, 37, 0.95);
+    border-radius: 0 0 12px 12px;
+}
+
+#am-user-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: var(--am-cream);
+    font-family: var(--am-font-body);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#am-user-input:focus {
+    border-color: var(--am-gold);
+}
+
+#am-send-btn {
+    background: transparent;
+    border: none;
+    color: var(--am-gold);
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+#am-send-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Quick Actions (Buttons) */
+.am-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.am-btn-action {
+    background: transparent;
+    border: 1px solid var(--am-gold);
+    color: var(--am-gold);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: var(--am-font-title);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.am-btn-action:hover {
+    background: var(--am-gold);
+    color: var(--am-navy);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    #am-chat-window {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    #am-chatbot-trigger {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #am-surprise-tooltip {
+        bottom: 90px;
+        right: 10px;
+    }
+}
