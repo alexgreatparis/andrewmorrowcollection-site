@@ -463,37 +463,6 @@
             align-items: center;
         }
 
-        .pack-noel-card {
-            background: rgba(13, 63, 107, 0.3);
-            padding: 0;
-            border-radius: 12px;
-            border: 2px solid #d4af37;
-            display: grid;
-            grid-template-columns: 1.5fr 0.8fr 1.5fr;
-            gap: 0;
-            align-items: stretch;
-            margin: 0 auto;
-            max-width: 1000px;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .pack-noel-video-left {
-            position: relative;
-            overflow: hidden;
-            background: #000;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-
-        .pack-noel-video-right {
-            position: relative;
-            overflow: hidden;
-            background: #000;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
         @media (max-width: 900px) {
             .hero-grid-new {
                 grid-template-columns: 1fr;
@@ -506,20 +475,6 @@
             .achat-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
-            }
-
-            .pack-noel-card {
-                grid-template-columns: 1fr;
-            }
-
-            .pack-noel-video-left {
-                border-radius: 10px 10px 0 0;
-                height: 300px;
-            }
-
-            .pack-noel-video-right {
-                border-radius: 0 0 10px 10px;
-                height: 300px;
             }
         }
 
@@ -712,65 +667,13 @@
         style="background: rgba(5, 22, 37, 0.95); border-top: 1px solid rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 8px 0; text-align: center; margin-top: 0 !important; position: relative; z-index: 10;">
         <p
             style="font-family: 'Cinzel', serif; color: var(--color-gold); font-size: 0.9em; letter-spacing: 1px; margin: 0; line-height: 1.4;">
-            VU SUR : <span style="color: #fff; margin: 0 10px;">TV MONACO</span> • <span
-                style="color: #fff; margin: 0 10px;">INFO MONACO</span><br>
             <span style="color: #d4af37; font-weight: bold;">Premier Prix du jury Cannes 2024</span>
         </p>
     </div>
 
-    <!-- SECTION: PACK NOEL (Moved Up) -->
-    <section id="pack-noel" style="padding: 60px 20px; background: rgba(13, 63, 107, 0.1);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-
-
-            <!-- Pack Spécial Noël Article (Copied from below) -->
-            <article class="product-card pack-noel-card">
-
-                <!-- Video Left -->
-                <div class="pack-noel-video-left">
-                    <video autoplay loop muted playsinline
-                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                        <source src="videos/packs_with_gifts.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <!-- Center Content -->
-                <div
-                    style="padding: 30px 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(5, 22, 37, 0.9); position: relative; z-index: 10;">
-                    <h3
-                        style="color: #d4af37; margin-bottom: 10px; font-size: 1.6em; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
-                        Pack Noel
-                    </h3>
-                    <p
-                        style="color: #f5f5dc; margin-bottom: 5px; font-size: 1.4em; font-family: 'Playfair Display', serif; font-style: italic; text-align: center;">
-                        Les 2 BD
-                    </p>
-                    <p
-                        style="font-size: 3.2em; color: #d4af37; margin: 0; font-weight: bold; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); text-align: center;">
-                        30<span class="currency-symbol">€</span> <span
-                            style="font-size: 0.5em; font-weight: normal; color: #f5f5dc; opacity: 0.9;"><span
-                                style="text-decoration: line-through;">32€</span></span>
-                    </p>
-                    <a class="pay-btn" href="https://buy.stripe.com/eVq00i8j82WG4qY9n6dUY04"
-                        style="display:inline-block; background: linear-gradient(135deg, #d4af37, #f0d858); color: #0d3f6b; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; font-family: 'Cinzel', serif; text-decoration: none; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transition: transform 0.3s ease; margin-top: 15px; text-align: center; animation: blink-red-yellow 1.5s infinite;">
-                        J'EN PROFITE
-                    </a>
-                </div>
-
-                <!-- Video Right -->
-                <div class="pack-noel-video-right">
-                    <video autoplay loop muted playsinline
-                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                        <source src="videos/pack_guirlande.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </article>
-        </div>
-    </section>
-
     <!-- SECTION 4: OFFRE (Achat) - MOVED HERE -->
     <section id="offre" class="tab-content">
-        <div style="padding: 80px 20px; text-align: center;">
+        <div style="padding: 15px 20px 80px 20px; text-align: center;">
             <!-- MARQUEE BASELINE (Duplicated) -->
             <div class="marquee-container" style="margin-bottom: 50px;">
                 <div class="marquee-content">
@@ -849,10 +752,10 @@
                         COURSE CONTRE LA MONTRE À MONTE-CARLO !</h3>
                     <p style="font-size: 2em; color: #d4af37; margin: 0 0 10px 0; font-weight: bold;">18<span
                             class="currency-symbol">€</span></p>
-                    <a class="pay-btn" href="https://buy.stripe.com/9B600iczodBk5v256QdUY03"
-                        style="display:inline-block; background: #d4af37; color: #0d3f6b; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1em; font-family: 'Cinzel', serif; text-decoration: none; animation: blink-red-yellow 1.5s infinite;">
-                        Commander l'unité
-                    </a>
+                    <span class="pay-btn" role="button" aria-disabled="true"
+                        style="display:inline-block; background: #666; color: #999; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: not-allowed; font-size: 1em; font-family: 'Cinzel', serif; text-decoration: none; pointer-events: none;">
+                        Stock épuisé
+                    </span>
                 </article>
             </div>
         </div>
